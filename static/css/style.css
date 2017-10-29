@@ -1,0 +1,239 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+
+  /* Begin page styling */
+
+body{
+    font-family: 'Poppins', sans-serif;
+    /* height: 100vh; */
+    width: 100%;
+
+}
+
+
+.herosite {
+    height: 100vh;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0, 0.92) 0%,
+        rgba(0,0,0, 0.92) 50%,
+        rgba(10,11,12,0.94) 50%,
+        rgba(10,11,12,0.94) 100%);
+}
+
+.herosite:after {
+    content: "";
+    width: 100%;
+    height: 0.5em;
+    position: absolute;
+    bottom: 0;
+    background-color: goldenrod;
+}
+
+/* Styling of Navbar */
+
+.navbox{
+    height: 7.5vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-color: transparent;
+    transition: background 1s;
+
+
+}
+
+#navboxtest.open {
+    background-color: rgba(10,11,12,0.7);
+}
+
+
+.navbox__logo {
+    font-size: 3em;
+    color: goldenrod;
+    flex: 1;
+}
+
+.navbox__navbar{
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    visibility: visible;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    transition: all 0.75s;
+    position: relative;
+    /* position: fixed;   Position fixed + right needs to be reviewd for better solution */
+    /* right: 5%;         Position fixed + right needs to be reviewd for better solution */
+}
+
+#navi.open {
+    visibility: hidden;
+    opacity: 0;
+    transform: translatex(50px);
+
+}
+
+.navbox__navbar a{
+    padding: 20px;
+    margin-right: 30px;
+    color: silver;
+    text-decoration: none;
+    font-size: 1.5em;
+    position: relative;
+}
+
+/* Styling of Herotext */
+
+.herobox {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: goldenrod;
+}
+
+
+.herobox__name {
+    font-size: 4em;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    align-self: center;
+    margin: 0 0 20px 0;
+
+
+}
+
+.herobox__name:before {
+    content: "<PS>";
+    display: block;
+    text-align: center;
+}
+
+.herobox__name:after{
+    content: "";
+    display: block;
+    height: 0.15em;
+    width: 1em;
+    background-color: silver;
+    margin: 20px auto 0 auto;
+
+}
+
+.herobox__subtitle{
+    margin: 0;
+    width: 100%;
+    color: silver;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.herobox__subtitle__left{
+    width: 45%;
+    text-align:right;
+}
+
+.herobox__subtitle__right{
+    width: 45%;
+}
+
+.herobox__subtitle__middle {
+    text-align: center;
+}
+
+/* ###########################################################
+#########   Styling of Burger-Navigation-Item   #################
+########################################################### */
+
+.navbox__burgeritem{
+    cursor: pointer;
+}
+
+.navbox__burgeritem span {
+    display: block;
+    width: 50px;
+    height: 7px;
+    margin: 0px 20px 5px 0;
+    background-color: silver;
+    top: 0;
+    position: relative;
+    transition: all ease-in-out 0.4s;
+}
+
+#navbox__burgercontainer.open span:nth-child(2),
+#navbox__burgercontainer.open span:nth-child(3){
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#navbox__burgercontainer.open span:nth-child(4){
+    transform: rotate(45deg);
+   transform-origin:right center
+}
+
+#navbox__burgercontainer.open span:nth-child(1){
+    transform: rotate(-45deg);
+    transform-origin: right center
+}
+
+
+
+
+/* #######################################
+###### Animation Styling of Nav-Anchors ##
+##########################################*/
+
+.navbox__navbar a:before,
+.navbox__navbar a:after {
+    content: "";
+    width: 2px;
+    height: 40px;
+    background-color: goldenrod;
+    opacity: 0.5;
+    position: absolute;
+    transition: all 0.5s;
+
+
+}
+
+.navbox__navbar a:before{
+    left: 0;
+}
+
+.navbox__navbar a:after {
+    right: 0;
+}
+
+.navbox__navbar a:hover:before{
+    left: 50%;
+    bottom: 25%;
+    transform: rotate(90deg);
+    opacity: 1;
+    height: 100%;
+}
+
+.navbox__navbar a:hover:after{
+    right: 50%;
+    bottom: 0;
+    top: 25%;
+    transform: rotate(90deg);
+    opacity: 1;
+    height: 100%
+}
+
+.test {
+    background-color: gold;
+}
