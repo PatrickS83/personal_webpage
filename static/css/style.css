@@ -355,6 +355,7 @@ h2 span {
     flex-direction: column;
     align-items: flex-start;
     flex-basis: 33%;
+    max-height: 70%;
 }
 
 .aboutme__content p {
@@ -397,6 +398,35 @@ h2 span {
     .herobox__subtitle{
         font-size:  1.5rem
     }
+
+    .section-title{
+        font-size: 3rem;
+    }
+
+    .slidecard h3 {
+        font-size: 3rem;
+    }
+
+    .slidecard {
+        height: 450px;
+        width: 700px;
+    }
+
+    .slideimg {
+        max-width: 650px;
+    }
+
+    .aboutme:before {
+        width: 60%;
+        height: 70%;
+        left: 3%;
+    }
+
+    .aboutme img {
+        max-width: 25%;
+        height: auto;
+    }
+
 
     @keyframes swap_left {
         0%, 40% {transform: translatex(0%)}
