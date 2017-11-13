@@ -346,7 +346,7 @@ h2 span {
     background-color: rgba(100,100,100,0.1);
     position: absolute;
     width: 70%;
-    height: 80%;
+    height: 70%;
     left: 2%;
     z-index: -1;
 }
@@ -379,7 +379,7 @@ h2 span {
 }
 
 .aboutme img {
-    max-width: 25%;
+    max-width: 20%;
     height: auto;
 }
 
@@ -419,13 +419,17 @@ h2 span {
 
     .aboutme:before {
         width: 60%;
-        height: 70%;
+        height: 80%;
         left: 3%;
     }
 
     .aboutme img {
-        max-width: 350px;
-        height: auto;
+        min-width: 350px;
+        max-height: 350px;
+    }
+
+    .aboutme__content p {
+        line-height: 1.5;
     }
 
 
