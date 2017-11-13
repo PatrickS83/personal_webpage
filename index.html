@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" href="./static/css/normalize.css">
+    <link rel="stylesheet" href="./static/css/flickity.min.css" media="screen">
     <link rel="stylesheet" href="./static/css/style.css">
     <title>Patrick Schülke</title>
 </head>
@@ -22,9 +23,9 @@
         <nav id="navboxtest" class="navbox open">
             <div class="navbox__logo">LOGO</div>
             <ul id="navi" class="navbox__navbar">
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a class="sitelink" href="#">Projekte</a></li>
+                <li><a class="sitelink" href="#">Über mich</a></li>
+                <li><a class="sitelink" href="#">Kontakt</a></li>
             </ul>
             <!-- Elements for CSS-styled-Burger-Nav-'Icon' -->
             <div id="navbox__burgercontainer" class="open">
@@ -48,11 +49,30 @@
     </section> <!--/herosite-->
 
     <section class="projects">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title">Projekte</h2>
+        <div class="slider carousel" data-flickity='{ "freeScroll": true }'>
+            <a href="#" class="slidecard slidecard--first">
+                <h3><span>Erstes</span> <span>Projekt</span></h3>
+                <img src="static/img/project_placeholder.png" alt="project img" class="slideimg">
+            </a>
+            <a href="#" class="slidecard slidecard--second">
+                <h3><span>Zweites</span> <span>Projekt</span></h3>
+                <img src="static/img/tablet_placeholder.png" alt="project img" class="slideimg">
+            </a>
+            <a href="#" class="slidecard slidecard--third">
+                <h3><span>Drittes</span> <span>Projekt</span></h3>
+                <img src="static/img/laptop_empty.png" alt="project img" class="slideimg">
+            </a>
+        </div>
     </section>
 
     <section class="aboutme">
-        <h2 class="section-title">About me</h2>
+        <div class="aboutme__content">
+            <h2 class="section-title"><span>Wer</span>bin ich?</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime sequi blanditiis, a natus hic assumenda sunt deleniti quibusdam rem quam consequatur? Vero laborum officiis quae minima optio ea sint consequuntur cum nihil nam, veritatis neque corrupti nesciunt. Mollitia error, quos molestias ipsam dolorem fugit? Neque ut tenetur at hic quaerat assumenda labore asperiores maiores velit laudantium ratione beatae cumque itaque et ipsa repellendus </p>
+            <a class="sitelink" href="#">Über mich</a>
+        </div>
+        <img src="static/img/kitten_placeholder.jpg" alt="kitten placeholder">
     </section>
 
     <section class="experience">
@@ -63,5 +83,6 @@
         <p>Patrick Schülke</p>
     </footer>
 
+    <script src="./static/js/flickity.pkgd.min.js"></script>
 </body>
 </html>

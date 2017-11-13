@@ -81,7 +81,7 @@ body{
 
 }
 
-.navbox__navbar a{
+.sitelink {
     padding: 1.2rem;
     margin-right: 2rem;
     color: silver;
@@ -143,19 +143,15 @@ body{
 /* Styling of Subtitle and  swap animation  on landing page */
 
 @keyframes swap_left {
-    0% {transform: translatex(0%)}
-    40% {transform: translatex(0%)}
+    0%, 40% {transform: translatex(0%)}
     50% {transform: scale(0.5) translatex(27.5%) }
-    60% {transform: translatex(42.5%) }
-    100%{transform: translatex(42.5%)}
+    60%, 100% {transform: translatex(42.5%) }
 }
 
 @keyframes swap_right {
-    0% {transform: translatex(0%)}
-    40% {transform: translatex(0%)}
+    0%, 40% {transform: translatex(0%)}
     50% {transform: scale(1.75) translatex(-15%) }
-    60% {transform: translatex(-40%) }
-    100%{transform: translatex(-40%)}
+    60%, 100% {transform: translatex(-40%) }
 }
 
 .herobox__subtitle__left{
@@ -218,8 +214,8 @@ body{
 ###### Animation Styling of Nav-Anchors ##
 ##########################################*/
 
-.navbox__navbar a:before,
-.navbox__navbar a:after {
+.sitelink:before,
+.sitelink:after {
     content: "";
     width: 2px;
     height: 2rem;
@@ -230,15 +226,15 @@ body{
     top: 25%
 }
 
-.navbox__navbar a:before{
+.sitelink:before{
     left: 0;
 }
 
-.navbox__navbar a:after {
+.sitelink:after {
     right: 0;
 }
 
-.navbox__navbar a:hover:before{
+.sitelink:hover:before{
     left: calc(50% - 1px);
     top: -25%;
     transform: rotate(90deg);
@@ -246,7 +242,7 @@ body{
     height: 99%;
 }
 
-.navbox__navbar a:hover:after{
+.sitelink:hover:after{
     right: calc(50% - 1px);
     bottom: 0;
     top: 25%;
@@ -254,8 +250,167 @@ body{
     opacity: 1;
     height: 99%
 }
+/* #######################################
+########     Project Section     #########
+########################################## */
+
+.projects {
+    min-height: 100vh;
+    background-color: rgba(100,100,100,0.1)
+}
+
+.section-title {
+    text-align: center;
+    font-size: 4rem;
+    margin: 0;
+    padding-top:  4rem;
+    letter-spacing: 0.2rem;
+}
+
+.slider {
+ margin-top: 10rem;
+}
+
+.slidecard {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    background-color: silver;
+    height: 550px;
+    width: 830px;
+    margin: 0 15rem 0 5rem;
+    position: relative;
+}
+
+.slidecard span,
+h2 span {
+    display: block;
+    position: relative;
+    left: -60px;
+}
+
+.slidecard h3 {
+    color: rgba(23,23,23, 1);
+    font-size: 4rem;
+    letter-spacing: 0.2rem;
+    transition: all 0.3s;
+}
+
+.slidecard h3:after {
+    content: "";
+    display: block;
+    height: 0.5rem;
+    width: 3rem;
+    background-color: goldenrod;
+    position: absolute;
+    left: -60px;
+}
+
+.slidecard h3:hover{
+    transform: translatey(-40px);
+}
+
+.slideimg:hover{
+    transform: translatex(40px);
+}
+
+.slideimg {
+    height: auto;
+    width: 750px;
+    transition: all 0.3s;
+}
+
+.slidecard--second {
+    background-color: mistyrose;
+}
+
+.slidecard--third {
+    background-color: aquamarine;
+}
+
+/* #########################################
+#######     About Me Section ##############
+########################################## */
 
 
+.aboutme {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutme:before {
+    content: "";
+    background-color: rgba(100,100,100,0.1);
+    position: absolute;
+    width: 65%;
+    height: 80%;
+    left: 2%;
+    z-index: -1;
+}
+
+.aboutme__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-basis: 33%;
+}
+
+.aboutme__content p {
+    line-height: 1.75;
+    width: 80%;
+}
+
+.aboutme__content a {
+    color: rgba(23,23,23, 1);
+}
+
+
+.aboutme__content h2:after {
+    content: "";
+    display: block;
+    height: 0.5rem;
+    width: 3rem;
+    background-color: goldenrod;
+    margin-top: 1rem;
+}
+
+.aboutme img {
+    width: 500px;
+    height: 650px;
+}
+
+
+/* #################################
+###########    Media Querys   ######
+####################################*/
+
+
+
+@media (max-width: 1400px) {
+
+    .herobox__name{
+        font-size: 3.5rem;
+    }
+
+    .herobox__subtitle{
+        font-size:  1.5rem
+    }
+
+    @keyframes swap_left {
+        0%, 40% {transform: translatex(0%)}
+        50% {transform: scale(0.5) translatex(32.5%) }
+        60%, 100% {transform: translatex(52.5%) }
+    }
+
+    @keyframes swap_right {
+        0%, 40% {transform: translatex(0%)}
+        50% {transform: scale(1.75) translatex(-20%) }
+        60%, 100% {transform: translatex(-50%) }
+    }
+
+}
 
 
 
