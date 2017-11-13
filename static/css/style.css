@@ -286,7 +286,7 @@ body{
 h2 span {
     display: block;
     position: relative;
-    left: -60px;
+    left: -3.5rem;
 }
 
 .slidecard h3 {
@@ -303,7 +303,7 @@ h2 span {
     width: 3rem;
     background-color: goldenrod;
     position: absolute;
-    left: -60px;
+    left: -3.5rem;
 }
 
 .slidecard h3:hover{
@@ -316,7 +316,7 @@ h2 span {
 
 .slideimg {
     height: auto;
-    width: 750px;
+    max-width: 750px;
     transition: all 0.3s;
 }
 
@@ -377,8 +377,8 @@ h2 span {
 }
 
 .aboutme img {
-    width: 500px;
-    height: 650px;
+    max-width: 25%;
+    height: auto;
 }
 
 
