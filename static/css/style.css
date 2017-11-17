@@ -282,8 +282,8 @@ body{
     position: relative;
 }
 
-.slidecard span,
-h2 span {
+.slidecard span
+ {
     display: block;
     position: relative;
     left: -3.5rem;
@@ -328,48 +328,59 @@ h2 span {
     background-color: aquamarine;
 }
 
+.slidecard--fourth {
+    background-color: lightsalmon;
+}
+
 /* #########################################
-#######     About Me Section ##############
+#######     Contentent Sections ##############
 ########################################## */
+.section-title span {
+    display: block;
+    text-align: left;
+}
 
-
-.aboutme {
+.aboutme,
+.experience {
     height: 100vh;
+    width: 80%;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin-top: 2rem;
 }
 
-.aboutme:before {
+.aboutme:before,
+.experience:before {
     content: "";
     background-color: rgba(100,100,100,0.1);
     position: absolute;
     width: 70%;
-    height: 70%;
+    height: 90%;
     left: 2%;
     z-index: -1;
 }
 
-.aboutme__content {
+.content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex-basis: 40%;
+    flex-basis: 35%;
     max-height: 70%;
 }
 
-.aboutme__content p {
+.content p {
     line-height: 1.75;
-    width: 80%;
+    width: 100%;
 }
 
-.aboutme__content a {
+.content a {
     color: rgba(23,23,23, 1);
 }
 
 
-.aboutme__content h2:after {
+.content h2:after {
     content: "";
     display: block;
     height: 0.5rem;
@@ -378,11 +389,91 @@ h2 span {
     margin-top: 1rem;
 }
 
-.aboutme img {
-    max-width: 20%;
+.aboutme img,
+.experience img {
+    flex-basis: 30%;
     height: auto;
 }
 
+/* ##### Experience section differences #### */
+
+.experience:before {
+    /* right: 98%; */
+    left: 28%
+}
+
+/* ##################################
+####### Contact section ###########
+################################## */
+
+.contact {
+    height: 35vh;
+    margin: 0 2%;
+    background-color: mistyrose;
+}
+
+.contact__content {
+    /* height: 40%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact__content > a {
+    text-decoration: none;
+    color: silver;
+    font-size: 2rem;
+    margin: 1.5rem;
+}
+
+.social {
+    width: 20%;
+    display: flex;
+    justify-content: space-around
+}
+
+.social a {
+    text-decoration: none;
+    color: black
+}
+
+
+.contact-title:after{
+    content: "";
+    display: block;
+    height: 0.5rem;
+    width: 4rem;
+    background-color: silver;
+    margin: 1rem auto 0 auto;
+
+}
+
+
+/* ##################################
+####### Footer Styling ###########
+################################## */
+
+footer {
+    height: 10vh;
+    margin: 0 2%;
+    background-color: rgba(100,100,100,0.1);
+    display: flex;
+    align-items: center;
+}
+
+.footercontent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footercontent a {
+    text-decoration: none;
+    color: black;
+}
 
 /* #################################
 ###########    Media Querys   ######
@@ -417,18 +508,19 @@ h2 span {
         max-width: 650px;
     }
 
-    .aboutme:before {
-        width: 60%;
-        height: 80%;
-        left: 3%;
+    .aboutme:before,
+    .experience:before {
+        width: 70%;
+        height: 90%;
     }
 
-    .aboutme img {
-        min-width: 350px;
-        max-height: 350px;
+    .aboutme img,
+    .experience img {
+        min-width: 345px;
+        max-height: 450px;
     }
 
-    .aboutme__content p {
+    .content p {
         line-height: 1.5;
     }
 
