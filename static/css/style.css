@@ -157,26 +157,27 @@ body{
 }
 
 .herobox__logo {
+    display: flex;
+    margin-bottom: 0.2rem;
+}
+
+.herobox__logo span {
     background: url(../img/hero_placholder.png) no-repeat;
-    width: 5rem;
+    display: block;
+    width: 4.5rem;
     height: 5rem;
     background-size: cover;
-    display: flex;
-    margin-bottom: 0.5rem;
 }
 
 .herobox__logo:before,
 .herobox__logo:after{
     content: "<";
+    display: block;
     font-size: 5rem;
-    height: 100%;
-    left: -40%;
-    position: relative;
 }
 
 .herobox__logo:after{
     content: ">";
-    left: 45%;
 }
 
 
@@ -312,7 +313,6 @@ body{
     text-align: center;
     font-size: 4rem;
     margin: 0;
-    /* padding-top:  4rem; */
     letter-spacing: 0.2rem;
 }
 
