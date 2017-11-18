@@ -23,11 +23,11 @@
 </script>
     <section class="herosite">
         <nav id="navboxtest" class="navbox open">
-            <div href="#" class="navbox__logo"><a href=""></a></div>
+            <div class="navbox__logo"><a href=""></a></div>
             <ul id="navi" class="navbox__navbar">
-                <li><a class="sitelink" href="#">Projekte</a></li>
-                <li><a class="sitelink" href="#">Über mich</a></li>
-                <li><a class="sitelink" href="#">Kontakt</a></li>
+                <li><a class="sitelink" href="#projectsection">Projekte</a></li>
+                <li><a class="sitelink" href="#aboutmesection">Über mich</a></li>
+                <li><a class="sitelink" href="#contactsection">Kontakt</a></li>
             </ul>
             <!-- Elements for CSS-styled-Burger-Nav-'Icon' -->
             <div id="navbox__burgercontainer" class="open">
@@ -51,7 +51,7 @@
         </div>
     </section> <!--/herosite-->
 
-    <section class="projects">
+    <section id="projectsection" class="projects">
         <h2 class="section-title section-title--underscore">Projekte</h2>
         <div class="slider carousel" data-flickity='{ "freeScroll": true }'>
             <a href="#" class="slidecard slidecard--first">
@@ -73,7 +73,7 @@
         </div>
     </section>
 
-    <section class="aboutme">
+    <section id="aboutmesection" class="aboutme">
         <div class="content aboutme__content">
             <h2 class="section-title"><span>Wer</span>bin ich?</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime sequi blanditiis, a natus hic assumenda sunt deleniti quibusdam rem
@@ -84,7 +84,7 @@
         <img src="static/img/kitten_placeholder.jpg" alt="kitten placeholder">
     </section>
 
-    <section class="experience">
+    <section  class="experience">
         <img src="static/img/kitten_placeholder_2.jpg" alt="kitten placeholder">
             <div class="content experience__content">
                 <h2 class="section-title"><span>Was</span>kann ich?</h2>
@@ -95,7 +95,7 @@
             </div>
     </section>
 
-    <section class="tools">
+    <section  class="tools">
             <h2 class="section-title section-title--underscore">Mein Werkzeug</h2>
             <div class="tools__overview">
                 <i class="devicon-html5-plain-wordmark"></i>
@@ -111,7 +111,7 @@
             </div>
     </section>
 
-    <section class="contact">
+    <section id="contactsection" class="contact">
         <div class="contact__content">
             <h2 class="section-title section-title--underscore">Sag hallo!</h2>
             <a href="#">patrick@patrickschuelke.me</a>
