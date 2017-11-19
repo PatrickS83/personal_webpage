@@ -21,7 +21,7 @@
     })
 };
 </script>
-    <section class="herosite">
+    <section id="particles-js" class="herosite">
         <nav id="navboxtest" class="navbox open">
             <div class="navbox__logo"><a href=""></a></div>
             <ul id="navi" class="navbox__navbar">
@@ -40,7 +40,7 @@
             </div>
         </nav>
         <!-- Welcome Text on landing page -->
-        <div class="herobox">
+        <div class="herobox count-particles">
             <div class="herobox__logo"><span></span></div>
             <h1 class="herobox__name">Patrick Schülke</h1>
             <div class="herobox__subtitle">
@@ -48,6 +48,7 @@
                 <span class="herobox__subtitle__middle">&</span>
                 <span class="herobox__subtitle__right">Developer</span>
             </div>
+            <a class="downarrow" href="#"></a>
         </div>
     </section> <!--/herosite-->
 
@@ -132,6 +133,26 @@
         </div>
     </footer>
 
+    <script src="./static/js/particles.min.js"></script>
+    <script src="./static/js/app.js"></script>
     <script src="./static/js/flickity.pkgd.min.js"></script>
+    <script>
+        var didScroll = false;
+
+        window.onscroll = closeNavbar;
+
+        function closeNavbar() {
+            didScroll = true;
+        }
+
+        setInterval(function() {
+            if(didScroll) {
+                didScroll = false;
+                document.getElementById('navbox__burgercontainer').classList.remove('open');
+                document.getElementById('navi').classList.add('open');
+                document.getElementById('navboxtest').classList.remove('open');
+            }
+        }, 250);
+    </script>
 </body>
 </html>
