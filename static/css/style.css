@@ -22,7 +22,7 @@ html {
 }
 
 @keyframes fadeInUp {
-    0% {opacity: 0; transform: translatey(5rem)}
+    0% {opacity: 0; transform: translatey(4rem)}
     100% {opacity: 1; transform: translatey(0)}
 }
 
@@ -478,7 +478,7 @@ body{
     align-items: flex-start;
     flex-basis: 35%;
     max-height: 70%;
-    animation: fadeInUp 0.8s forwards;
+    /* animation: fadeInUp 0.8s forwards; */
 }
 
 .content p {
@@ -534,6 +534,14 @@ body{
 .tools__overview > i {
     font-size: 6rem;
     color: goldenrod;
+}
+
+.fadeInUp {
+    transform: translateY(4rem);
+    opacity: 0;
+}
+
+.fadeInUpTriggered {
     animation: fadeInUp 0.8s forwards;
 }
 
@@ -549,9 +557,9 @@ body{
 
 }
 
-.contact:after {
+.slideInTriggered:after {
     content: "";
-    background-color: mistyrose;
+    background-color: rgba(218, 165, 32, 0.50);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -568,6 +576,13 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.slideIn {
+    opacity: 0
+}
+
+.slideInTriggered {
     animation: slideInLeft 1s forwards;
 }
 

@@ -12,15 +12,6 @@
     <title>Patrick Schülke</title>
 </head>
 <body>
-<script>
-    window.onload = function () {
-    document.getElementById('navbox__burgercontainer').addEventListener('click', function () {
-    this.classList.toggle('open');
-    document.getElementById('navi').classList.toggle('open');
-    document.getElementById('navboxtest').classList.toggle('open');
-    })
-};
-</script>
     <section id="particles-js" class="herosite">
         <nav id="navboxtest" class="navbox open">
             <div class="navbox__logo"><a href=""></a></div>
@@ -75,7 +66,7 @@
     </section>
 
     <section id="aboutmesection" class="aboutme">
-        <div class="content aboutme__content">
+        <div class="content aboutme__content fadeInUp">
             <h2 class="section-title"><span>Wer</span>bin ich?</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime sequi blanditiis, a natus hic assumenda sunt deleniti quibusdam rem
                 quam consequatur? Vero laborum officiis quae minima optio ea sint consequuntur cum nihil nam, veritatis neque corrupti nesciunt.
@@ -87,7 +78,7 @@
 
     <section  class="experience">
         <img src="static/img/kitten_placeholder_2.jpg" alt="kitten placeholder">
-            <div class="content experience__content">
+            <div class="content experience__content fadeInUp">
                 <h2 class="section-title"><span>Was</span>kann ich?</h2>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime sequi blanditiis, a natus hic assumenda sunt deleniti quibusdam rem
                     quam consequatur? Vero laborum officiis quae minima optio ea sint consequuntur cum nihil nam, veritatis neque corrupti nesciunt.
@@ -99,21 +90,21 @@
     <section  class="tools">
             <h2 class="section-title section-title--underscore">Mein Werkzeug</h2>
             <div class="tools__overview">
-                <i class="devicon-html5-plain-wordmark"></i>
-                <i class="devicon-css3-plain-wordmark"></i>
-                <i class="devicon-sass-original"></i>
-                <i class="devicon-javascript-plain"></i>
-                <i class="devicon-jquery-plain-wordmark"></i>
-                <i class="devicon-nodejs-plain-wordmark"></i>
-                <i class="devicon-react-original-wordmark"></i>
-                <i class="devicon-github-plain-wordmark"></i>
-                <i class="devicon-wordpress-plain-wordmark"></i>
+                <i class="fadeInUp devicon-html5-plain-wordmark"></i>
+                <i class="fadeInUp devicon-css3-plain-wordmark"></i>
+                <i class="fadeInUp devicon-sass-original"></i>
+                <i class="fadeInUp devicon-javascript-plain"></i>
+                <i class="fadeInUp devicon-jquery-plain-wordmark"></i>
+                <i class="fadeInUp devicon-nodejs-plain-wordmark"></i>
+                <i class="fadeInUp devicon-react-original-wordmark"></i>
+                <i class="fadeInUp devicon-github-plain-wordmark"></i>
+                <i class="fadeInUp devicon-wordpress-plain-wordmark"></i>
 
             </div>
     </section>
 
     <section id="contactsection" class="contact">
-        <div class="contact__content">
+        <div class="contact__content slideIn">
             <h2 class="section-title section-title--underscore">Sag hallo!</h2>
             <a href="#">patrick@patrickschuelke.me</a>
             <div class="social">
@@ -137,22 +128,64 @@
     <script src="./static/js/app.js"></script>
     <script src="./static/js/flickity.pkgd.min.js"></script>
     <script>
+        window.onload = function () {
+            document.getElementById('navbox__burgercontainer').addEventListener('click', function () {
+            this.classList.toggle('open');
+            document.getElementById('navi').classList.toggle('open');
+            document.getElementById('navboxtest').classList.toggle('open');
+            })
+        };
+    </script>
+    <script>
+        // script for close navbar on scroll
         var didScroll = false;
 
-        window.onscroll = closeNavbar;
-
-        function closeNavbar() {
+        function toggleNavbar() {
             didScroll = true;
         }
 
-        setInterval(function() {
-            if(didScroll) {
+        window.onscroll = toggleNavbar;
+
+        setInterval(function toggleNavigation() {
+            // opens navbar at top of the page
+            if(didScroll === true && window.pageYOffset <= 100) {
+                didScroll = false;
+                document.getElementById('navbox__burgercontainer').classList.add('open');
+                document.getElementById('navi').classList.remove('open');
+                document.getElementById('navboxtest').classList.add('open');
+            }
+            // closes navbar on scrolling if not on top of page
+            else if(didScroll) {
                 didScroll = false;
                 document.getElementById('navbox__burgercontainer').classList.remove('open');
                 document.getElementById('navi').classList.add('open');
                 document.getElementById('navboxtest').classList.remove('open');
             }
         }, 250);
+    </script>
+    <script>
+        // Script for onscroll in viewport Animations
+        var toolsIcons = document.querySelectorAll('.fadeInUp');
+        var contactSection = document.querySelector('.contact__content')
+
+        // checks if an element entered viewport
+        function isInViewport(element) {
+          let bounding = element.getBoundingClientRect();
+          return (
+            bounding.top >= 0 &&
+            bounding.left >= 0 &&
+            bounding.bottom <= (window.innerHeight * 1.2|| document.documentElement.clientHeight * 1.2) &&
+            bounding.right <= (window.innerWidth * 1.2|| document.documentElement.clientWidth * 1.2)
+          );
+        };
+
+        //triggers animation for elements that entered the viewport
+        setInterval(function triggerAnimation() {
+          for (let icon of toolsIcons) {
+            if (isInViewport(icon)) icon.classList.add('fadeInUpTriggered');
+          };
+          if (isInViewport(contactSection)) contactSection.classList.add('slideInTriggered');
+        }, 150);
     </script>
 </body>
 </html>
