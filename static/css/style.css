@@ -636,7 +636,7 @@ body {
   /*Navbar and logo will always be on top*/
   pointer-events: none; }
 
-#navboxtest.open {
+.navbox.open {
   background-color: #1e2b31;
   opacity: 0.9;
   pointer-events: all; }
@@ -664,7 +664,7 @@ body {
   position: relative; }
 
 /* Navbar slidein animation  */
-#navi.open {
+.navbox__navbar.open {
   visibility: hidden;
   opacity: 0;
   transform: translatex(100%) scale(0.1); }

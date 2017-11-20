@@ -11,9 +11,9 @@
 </head>
 <body>
     <section id="particles-js" class="herosite">
-        <nav id="navboxtest" class="navbox open">
+        <nav class="navbox open">
             <div class="navbox__logo"><a href=""></a></div>
-            <ul id="navi" class="navbox__navbar">
+            <ul class="navbox__navbar">
                 <li><a class="sitelink" href="#projectsection">Projekte</a></li>
                 <li><a class="sitelink" href="#aboutmesection">Über mich</a></li>
                 <li><a class="sitelink" href="#contactsection">Kontakt</a></li>
@@ -129,8 +129,8 @@
         window.onload = function () {
             document.getElementById('navbox__burgercontainer').addEventListener('click', function () {
             this.classList.toggle('open');
-            document.getElementById('navi').classList.toggle('open');
-            document.getElementById('navboxtest').classList.toggle('open');
+            document.querySelector('.navbox__navbar').classList.toggle('open');
+            document.querySelector('.navbox').classList.toggle('open');
             })
         };
     </script>
@@ -149,15 +149,15 @@
             if(didScroll === true && window.pageYOffset <= 100) {
                 didScroll = false;
                 document.getElementById('navbox__burgercontainer').classList.add('open');
-                document.getElementById('navi').classList.remove('open');
-                document.getElementById('navboxtest').classList.add('open');
+                document.querySelector('.navbox__navbar').classList.remove('open');
+                document.querySelector('.navbox').classList.add('open');
             }
             // closes navbar on scrolling if not on top of page
             else if(didScroll) {
                 didScroll = false;
                 document.getElementById('navbox__burgercontainer').classList.remove('open');
-                document.getElementById('navi').classList.add('open');
-                document.getElementById('navboxtest').classList.remove('open');
+                document.querySelector('.navbox__navbar').classList.add('open');
+                document.querySelector('.navbox').classList.remove('open');
             }
         }, 250);
     </script>
