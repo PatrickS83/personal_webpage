@@ -334,8 +334,11 @@ body{
 ########################################## */
 
 .projects {
-    min-height: 100vh;
+    height: 90vh;
     background-color: rgba(100,100,100,0.1);
+    @include respond-to($phone) {
+        height: 80vh;
+    }
 }
 
 .section-title {
@@ -346,6 +349,9 @@ body{
     @include respond-to($laptop) {
         font-size: 3rem;
     }
+    @include respond-to($phone) {
+        font-size: 2.5rem;
+    }
 
     span {
         display: block;
@@ -354,9 +360,16 @@ body{
 }
 
 .slider {
- margin-top: 10rem;
- @include respond-to($laptop) {
-    margin-top: 7rem;}
+    margin-top: 7rem;
+    @include respond-to($laptop) {
+        margin-top: 3rem;}
+    @include respond-to($phone) {
+        margin-top: 10rem;}
+}
+
+.flickity-page-dots {
+@include respond-to($phone) {
+    display: none;}
 }
 
 .slidecard {
@@ -377,14 +390,20 @@ body{
     }
     @include respond-to($phone) {
         flex-direction: column;
+        justify-content: flex-end;
+        width: 300px;
+        height: 150px;
     }
 
     span {
-       display: block;
-       position: relative;
-       left: -3.5rem;
-       @include respond-to($tablet-portrait) {
-        left: -2.5rem;}
+        display: block;
+        position: relative;
+        left: -3.5rem;
+        @include respond-to($tablet-portrait) {
+            left: -2.5rem;}
+        @include respond-to($phone) {
+            left: unset;
+            text-align: center;}
     }
 
     h3 {
@@ -397,6 +416,12 @@ body{
         }
         @include respond-to($tablet-portrait) {
             font-size: 3.5rem;
+        }
+        @include respond-to($phone) {
+            font-size: 2rem;
+            position: relative;
+            order: 2;
+            top: 10vh;
         }
     }
 
@@ -411,6 +436,10 @@ body{
         @include respond-to($tablet-portrait) {
             left: -1.5rem;
         }
+        @include respond-to($phone) {
+            left: calc(50% - 1.5rem);
+            height: 0.3rem;
+        }
     }
 
     h3:hover {
@@ -423,11 +452,13 @@ body{
     max-width: 750px;
     transition: all 0.3s;
     @include respond-to($laptop) {
-        max-width: 650px;
-    }
+        max-width: 650px;}
     @include respond-to($tablet-portrait) {
-        max-width: 500px;
-    }
+        max-width: 500px;}
+    @include respond-to($phone) {
+        max-width: 275px;
+        position: relative;
+        top: 50%}
 
     &:hover{
         transform: translatex(40px);
@@ -462,6 +493,8 @@ body{
         width: 100%;
         height: 70vh;
     }
+    @include respond-to($phone) {
+        height: 90vh;}
 
     &:before {
         content: "";
@@ -478,6 +511,10 @@ body{
         @include respond-to($tablet-portrait) {
             max-height: 65%;
         }
+        @include respond-to($phone) {
+            width: 100%;
+            left: unset;
+            max-height: 90%}
     }
 }
 
@@ -490,6 +527,9 @@ body{
     @include respond-to($tablet-portrait) {
         flex-basis: 40%;
     }
+    @include respond-to($phone) {
+        flex-basis: 90%;
+        max-height: 90%}
     /* animation: fadeInUp 0.8s forwards; */
     p {
         line-height: 1.75;
@@ -500,11 +540,17 @@ body{
         @include respond-to($tablet-portrait) {
             line-height: 1.5;
         }
+        @include respond-to($phone) {
+            line-height: 1.75;}
+
     }
 
     a {
         color: rgba(23,23,23, 1);
+        @include respond-to($phone) {
+            margin-top: 2rem;}
     }
+
 
     h2:after {
         content: "";
@@ -513,7 +559,10 @@ body{
         width: 3rem;
         background-color: goldenrod;
         margin-top: 1rem;
+        @include respond-to($phone) {
+            margin-bottom: 1rem;}
     }
+
 }
 
 
@@ -528,13 +577,16 @@ body{
     @include respond-to($tablet-portrait) {
         flex-basis: 25%;
     }
+    @include respond-to($phone) {
+        display:none;}
 }
 
 /* ##### Experience section differences #### */
 
 .experience:before {
-    /* right: 98%; */
-    left: 28%
+    left: 28%;
+    @include respond-to($phone) {
+        left: unset;}
 }
 
 /* ##################################
@@ -556,10 +608,14 @@ body{
     grid-auto-rows: 20vh;
     justify-items: center;
     align-items: center;
+    @include respond-to($phone) {
+        width: 90%;}
 
     & > i {
         font-size: 6rem;
         color: goldenrod;
+        @include respond-to($phone) {
+            font-size: 5rem;}
     }
 }
 
@@ -581,6 +637,8 @@ body{
     height: 40vh;
     margin: 0 2%;
     position: relative;
+    @include respond-to($phone) {
+        height: 50vh;}
 
 }
 
@@ -595,6 +653,8 @@ body{
         text-decoration: none;
         color: silver;
         font-size: 2.5rem;
+        @include respond-to($phone) {
+            font-size: 1.5rem;}
     }
 }
 
@@ -603,7 +663,7 @@ body{
 }
 
 .slideInTriggered {
-    animation: slideInLeft 1s forwards;
+    animation: slideInLeft 0.5s forwards;
 
     &:after {
         content: "";
@@ -614,7 +674,7 @@ body{
         top: 0;
         left: 0;
         z-index: -1;
-        animation: slideInRight 1.5s forwards 1s;
+        animation: slideInRight 1.5s forwards 0.5s;
         opacity: 0;
     }
 }
@@ -626,6 +686,8 @@ body{
     @include respond-to($tablet-portrait) {
         width: 50%;
     }
+    @include respond-to($phone) {
+        width: 80%;}
 
     a {
         text-decoration: none;
@@ -659,6 +721,9 @@ footer {
     background-color: rgba(100,100,100,0.1);
     display: flex;
     align-items: center;
+    @include respond-to($phone) {
+        height: 20vh;}
+
 }
 
 .footercontent {
@@ -667,6 +732,10 @@ footer {
     align-items: center;
     width: 80%;
     margin: 0 auto;
+    @include respond-to($phone) {
+        height: 80%;
+        flex-direction: column;
+        }
 
     a {
         text-decoration: none;
