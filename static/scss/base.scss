@@ -1,6 +1,14 @@
 @import 'normalize';
 @import 'flickity';
 @import 'animations';
+@import 'mixins';
+
+
+$color1: rgba(5, 102, 141, 1);
+$color2: rgba(2, 128, 144, 1);
+$color3: rgba(0, 168, 150, 1);
+$color4: rgba(2, 195, 154, 1);
+$color5: rgba(240, 243, 189, 1);
 
 
 html {
@@ -28,10 +36,10 @@ body{
     height: 100vh;
     background: linear-gradient(
         90deg,
-        #1e2b31 0%,
-        #1e2b31 50%,
-        rgba(30, 43, 49, 0.94) 50%,
-        rgba(30, 43, 49, 0.94) 100%);
+        lighten(#1e2b31, 0) 0%,
+        lighten(#1e2b31, 0) 50%,
+        lighten(#1e2b31, 5) 50%,
+        lighten(#1e2b31, 5) 100%);
 
     &:before {
         content: "";
@@ -138,8 +146,7 @@ body{
     flex-direction: column;
     color: goldenrod;
     pointer-events: none;
-}
-
+    }
 
 .herobox__name {
     font-size: 4rem;
@@ -278,13 +285,8 @@ body{
         top: 25%
     }
 
-    &:before{
-        left: 0;
-    }
-
-    &:after {
-        right: 0;
-    }
+    &:before{left: 0;}
+    &:after {right: 0;}
 
     &:hover:before{
         left: calc(50% - 1px);
@@ -310,7 +312,7 @@ body{
 
 .projects {
     min-height: 100vh;
-    background-color: rgba(100,100,100,0.1)
+    background-color: rgba(100,100,100,0.1);
 }
 
 .section-title {
@@ -318,6 +320,11 @@ body{
     font-size: 4rem;
     margin: 0;
     letter-spacing: 0.2rem;
+
+    span {
+        display: block;
+        text-align: left;
+    }
 }
 
 .slider {
@@ -333,44 +340,58 @@ body{
     width: 830px;
     margin: 0 15rem 0 5rem;
     position: relative;
-}
+    @include respond-to($phone) {
+        flex-direction: column;
+    }
 
-.slidecard span
- {
-    display: block;
-    position: relative;
-    left: -3.5rem;
-}
+    span {
+       display: block;
+       position: relative;
+       left: -3.5rem;
+       @include respond-to($tablet-portrait) {
+        left: -1.5rem;
+    }
+    }
 
-.slidecard h3 {
-    color: rgba(23,23,23, 1);
-    font-size: 4rem;
-    letter-spacing: 0.2rem;
-    transition: all 0.3s;
-}
+    h3 {
+        color: rgba(23,23,23, 1);
+        font-size: 4rem;
+        letter-spacing: 0.2rem;
+        transition: all 0.3s;
+        @include respond-to($tablet-portrait) {
+            font-size: 3rem;
+        }
+    }
 
-.slidecard h3:after {
-    content: "";
-    display: block;
-    height: 0.5rem;
-    width: 3rem;
-    background-color: goldenrod;
-    position: absolute;
-    left: -3.5rem;
-}
+    h3:after {
+        content: "";
+        display: block;
+        height: 0.5rem;
+        width: 3rem;
+        background-color: goldenrod;
+        position: absolute;
+        left: -3.5rem;
+        @include respond-to($tablet-portrait) {
+            left: -1.5rem;
+        }
+    }
 
-.slidecard h3:hover{
-    transform: translatey(-40px);
-}
-
-.slideimg:hover{
-    transform: translatex(40px);
+    h3:hover {
+        transform: translatey(-40px);
+    }
 }
 
 .slideimg {
     height: auto;
     max-width: 750px;
     transition: all 0.3s;
+    @include respond-to($tablet-portrait) {
+        max-width: 550px;
+    }
+
+    &:hover{
+        transform: translatex(40px);
+    }
 }
 
 .slidecard--second {
@@ -388,11 +409,6 @@ body{
 /* #########################################
 #######     Contentent Sections ##############
 ########################################## */
-.section-title span {
-    display: block;
-    text-align: left;
-}
-
 .aboutme,
 .experience {
     height: 100vh;
@@ -402,17 +418,23 @@ body{
     justify-content: space-around;
     align-items: center;
     margin-top: 2rem;
-}
+    @include respond-to($tablet-portrait) {
+        width: 100%;
+        height: 80vh;
+    }
 
-.aboutme:before,
-.experience:before {
-    content: "";
-    background-color: rgba(100,100,100,0.1);
-    position: absolute;
-    width: 70%;
-    height: 90%;
-    left: 2%;
-    z-index: -1;
+    &:before {
+        content: "";
+        background-color: rgba(100,100,100,0.1);
+        position: absolute;
+        width: 70%;
+        height: 90%;
+        left: 2%;
+        z-index: -1;
+        @include respond-to($tablet-portrait) {
+            max-height: 65%;
+        }
+    }
 }
 
 .content {
@@ -421,32 +443,40 @@ body{
     align-items: flex-start;
     flex-basis: 35%;
     max-height: 70%;
+    @include respond-to($tablet-portrait) {
+        flex-basis: 50%;
+    }
     /* animation: fadeInUp 0.8s forwards; */
+    p {
+        line-height: 1.75;
+        width: 100%;
+        @include respond-to($tablet-portrait) {
+            line-height: 1.5;
+        }
+    }
+
+    a {
+        color: rgba(23,23,23, 1);
+    }
+
+    h2:after {
+        content: "";
+        display: block;
+        height: 0.5rem;
+        width: 3rem;
+        background-color: goldenrod;
+        margin-top: 1rem;
+    }
 }
 
-.content p {
-    line-height: 1.75;
-    width: 100%;
-}
-
-.content a {
-    color: rgba(23,23,23, 1);
-}
-
-
-.content h2:after {
-    content: "";
-    display: block;
-    height: 0.5rem;
-    width: 3rem;
-    background-color: goldenrod;
-    margin-top: 1rem;
-}
 
 .aboutme img,
 .experience img {
     flex-basis: 30%;
     height: auto;
+    @include respond-to($tablet-portrait) {
+        flex-basis: 25%;
+    }
 }
 
 /* ##### Experience section differences #### */
@@ -480,12 +510,12 @@ body{
 }
 
 .fadeInUp {
-    transform: translateY(4rem);
+    // transform: translateY(4rem);
     opacity: 0;
 }
 
 .fadeInUpTriggered {
-    animation: fadeInUp 0.8s forwards;
+    animation: fadeInUp 0.5s forwards;
 }
 
 
@@ -539,6 +569,9 @@ body{
     width: 20%;
     display: flex;
     justify-content: space-around;
+    @include respond-to($tablet-portrait) {
+        width: 50%;
+    }
 
     a {
         text-decoration: none;
@@ -630,7 +663,7 @@ footer {
 
     .aboutme img,
     .experience img {
-        min-width: 345px;
+        min-width: 320px;
         max-height: 450px;
     }
 

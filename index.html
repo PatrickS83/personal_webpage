@@ -172,8 +172,8 @@
           return (
             bounding.top >= 0 &&
             bounding.left >= 0 &&
-            bounding.bottom <= (window.innerHeight * 1.2|| document.documentElement.clientHeight * 1.2) &&
-            bounding.right <= (window.innerWidth * 1.2|| document.documentElement.clientWidth * 1.2)
+            bounding.bottom <= (window.innerHeight * 1|| document.documentElement.clientHeight * 1) &&
+            bounding.right <= (window.innerWidth * 1|| document.documentElement.clientWidth * 1)
           );
         };
 
