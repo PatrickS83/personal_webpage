@@ -1,7 +1,7 @@
 @import 'normalize';
 @import 'flickity';
-@import 'animations';
 @import 'mixins';
+@import 'animations';
 
 
 $color1: rgba(5, 102, 141, 1);
@@ -92,6 +92,9 @@ body{
     transition: background-color ease-in 0.5s;
     z-index: 99;    /*Navbar and logo will always be on top*/
     pointer-events: none;
+    @include respond-to($phone) {
+        display: none; //change later!!
+    }
 }
 
 .navbox.open {
@@ -154,6 +157,13 @@ body{
     text-transform: uppercase;
     align-self: center;
     margin: 0 0 1rem 0;
+    @include respond-to($laptop) {
+        font-size: 3.5rem;
+    }
+    @include respond-to($phone) {
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+    }
 
     &:after{
         content: "";
@@ -175,12 +185,19 @@ body{
         width: 4.5rem;
         height: 5rem;
         background-size: cover;
+        @include respond-to($phone) {
+            width: 2.5rem;
+            height: 3.5rem;
+        }
     }
     &:before,
     &:after{
         content: "<";
         display: block;
         font-size: 5rem;
+        @include respond-to($phone) {
+            font-size: 3.5rem;
+        }
     }
     &:after{
         content: ">";
@@ -197,6 +214,12 @@ body{
     display: flex;
     justify-content: space-between;
     overflow: hidden;
+    @include respond-to($laptop) {
+        font-size: 1.5rem;
+    }
+    @include respond-to($phone) {
+        font-size: 1rem;
+    }
 }
 
 /* Styling of Subtitle and  swap animation  on landing page */
@@ -320,6 +343,9 @@ body{
     font-size: 4rem;
     margin: 0;
     letter-spacing: 0.2rem;
+    @include respond-to($laptop) {
+        font-size: 3rem;
+    }
 
     span {
         display: block;
@@ -329,6 +355,8 @@ body{
 
 .slider {
  margin-top: 10rem;
+ @include respond-to($laptop) {
+    margin-top: 7rem;}
 }
 
 .slidecard {
@@ -340,6 +368,13 @@ body{
     width: 830px;
     margin: 0 15rem 0 5rem;
     position: relative;
+    @include respond-to($laptop) {
+        height: 450px;
+        width: 700px;
+    }
+    @include respond-to($tablet-portrait) {
+        width: 600px;
+    }
     @include respond-to($phone) {
         flex-direction: column;
     }
@@ -349,8 +384,7 @@ body{
        position: relative;
        left: -3.5rem;
        @include respond-to($tablet-portrait) {
-        left: -1.5rem;
-    }
+        left: -2.5rem;}
     }
 
     h3 {
@@ -358,8 +392,11 @@ body{
         font-size: 4rem;
         letter-spacing: 0.2rem;
         transition: all 0.3s;
+        @include respond-to($laptop) {
+            font-size: 4rem;
+        }
         @include respond-to($tablet-portrait) {
-            font-size: 3rem;
+            font-size: 3.5rem;
         }
     }
 
@@ -385,8 +422,11 @@ body{
     height: auto;
     max-width: 750px;
     transition: all 0.3s;
+    @include respond-to($laptop) {
+        max-width: 650px;
+    }
     @include respond-to($tablet-portrait) {
-        max-width: 550px;
+        max-width: 500px;
     }
 
     &:hover{
@@ -420,7 +460,7 @@ body{
     margin-top: 2rem;
     @include respond-to($tablet-portrait) {
         width: 100%;
-        height: 80vh;
+        height: 70vh;
     }
 
     &:before {
@@ -431,6 +471,10 @@ body{
         height: 90%;
         left: 2%;
         z-index: -1;
+        @include respond-to($laptop) {
+            width: 70%;
+            height: 90%;
+        }
         @include respond-to($tablet-portrait) {
             max-height: 65%;
         }
@@ -444,12 +488,15 @@ body{
     flex-basis: 35%;
     max-height: 70%;
     @include respond-to($tablet-portrait) {
-        flex-basis: 50%;
+        flex-basis: 40%;
     }
     /* animation: fadeInUp 0.8s forwards; */
     p {
         line-height: 1.75;
         width: 100%;
+        @include respond-to($laptop) {
+            line-height: 1.5;
+        }
         @include respond-to($tablet-portrait) {
             line-height: 1.5;
         }
@@ -474,6 +521,10 @@ body{
 .experience img {
     flex-basis: 30%;
     height: auto;
+    @include respond-to($laptop) {
+        min-width: 320px;
+        max-height: 450px;
+    }
     @include respond-to($tablet-portrait) {
         flex-basis: 25%;
     }
@@ -492,6 +543,9 @@ body{
 
 .tools {
     height: 90vh;
+    @include respond-to($tablet-portrait) {
+        height: 80vh;
+    }
 }
 
 .tools__overview {
@@ -624,64 +678,3 @@ footer {
 ###########    Media Querys   ######
 ####################################*/
 
-@media (max-width: 1400px) {
-
-    .herobox__name{
-        font-size: 3.5rem;
-    }
-
-    .herobox__subtitle{
-        font-size:  1.5rem
-    }
-
-    .section-title{
-        font-size: 3rem;
-    }
-
-    .slider {
-        margin-top: 7rem;
-    }
-
-    .slidecard h3 {
-        font-size: 3rem;
-    }
-
-    .slidecard {
-        height: 450px;
-        width: 700px;
-    }
-
-    .slideimg {
-        max-width: 650px;
-    }
-
-    .aboutme:before,
-    .experience:before {
-        width: 70%;
-        height: 90%;
-    }
-
-    .aboutme img,
-    .experience img {
-        min-width: 320px;
-        max-height: 450px;
-    }
-
-    .content p {
-        line-height: 1.5;
-    }
-
-
-    @keyframes swap_left {
-        0%, 40% {transform: translatex(0%)}
-        50% {transform: scale(0.5) translatex(32.5%) }
-        60%, 100% {transform: translatex(52.5%) }
-    }
-
-    @keyframes swap_right {
-        0%, 40% {transform: translatex(0%)}
-        50% {transform: scale(1.75) translatex(-20%) }
-        60%, 100% {transform: translatex(-50%) }
-    }
-
-}

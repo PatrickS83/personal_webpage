@@ -557,6 +557,51 @@ http://flickity.metafizzy.co
     transform: translate3d(0, -15px, 0); }
   90% {
     transform: translate3d(0, -4px, 0); } }
+@media (max-width: 1400px) {
+  @keyframes swap_left {
+    0%, 40% {
+      transform: translatex(0%); }
+    50% {
+      transform: scale(0.5) translatex(32.5%); }
+    60%, 100% {
+      transform: translatex(52.5%); } }
+  @keyframes swap_right {
+    0%, 40% {
+      transform: translatex(0%); }
+    50% {
+      transform: scale(1.75) translatex(-20%); }
+    60%, 100% {
+      transform: translatex(-50%); } } }
+@media (max-width: 770px) {
+  @keyframes swap_left {
+    0%, 40% {
+      transform: translatex(0%); }
+    50% {
+      transform: scale(0.5) translatex(52.5%); }
+    60%, 100% {
+      transform: translatex(77.5%); } }
+  @keyframes swap_right {
+    0%, 40% {
+      transform: translatex(0%); }
+    50% {
+      transform: scale(1.75) translatex(-30%); }
+    60%, 100% {
+      transform: translatex(-70%); } } }
+@media (max-width: 480px) {
+  @keyframes swap_left {
+    0%, 40% {
+      transform: translatex(0%); }
+    50% {
+      transform: scale(0.5) translatex(52.5%); }
+    60%, 100% {
+      transform: translatex(110%); } }
+  @keyframes swap_right {
+    0%, 40% {
+      transform: translatex(0%); }
+    50% {
+      transform: scale(1.75) translatex(-40%); }
+    60%, 100% {
+      transform: translatex(-100%); } } }
 html {
   box-sizing: border-box; }
 
@@ -624,6 +669,9 @@ body {
   z-index: 99;
   /*Navbar and logo will always be on top*/
   pointer-events: none; }
+  @media only screen and (max-width: 480px) {
+    .navbox {
+      display: none; } }
 
 .navbox.open {
   background-color: #1e2b31;
@@ -674,6 +722,13 @@ body {
   text-transform: uppercase;
   align-self: center;
   margin: 0 0 1rem 0; }
+  @media only screen and (max-width: 1400px) {
+    .herobox__name {
+      font-size: 3.5rem; } }
+  @media only screen and (max-width: 480px) {
+    .herobox__name {
+      font-size: 2rem;
+      letter-spacing: 0.2rem; } }
   .herobox__name:after {
     content: "";
     display: block;
@@ -691,10 +746,17 @@ body {
     width: 4.5rem;
     height: 5rem;
     background-size: cover; }
+    @media only screen and (max-width: 480px) {
+      .herobox__logo span {
+        width: 2.5rem;
+        height: 3.5rem; } }
   .herobox__logo:before, .herobox__logo:after {
     content: "<";
     display: block;
     font-size: 5rem; }
+    @media only screen and (max-width: 480px) {
+      .herobox__logo:before, .herobox__logo:after {
+        font-size: 3.5rem; } }
   .herobox__logo:after {
     content: ">"; }
 
@@ -708,6 +770,12 @@ body {
   display: flex;
   justify-content: space-between;
   overflow: hidden; }
+  @media only screen and (max-width: 1400px) {
+    .herobox__subtitle {
+      font-size: 1.5rem; } }
+  @media only screen and (max-width: 480px) {
+    .herobox__subtitle {
+      font-size: 1rem; } }
 
 /* Styling of Subtitle and  swap animation  on landing page */
 .herobox__subtitle__left {
@@ -807,12 +875,18 @@ body {
   font-size: 4rem;
   margin: 0;
   letter-spacing: 0.2rem; }
+  @media only screen and (max-width: 1400px) {
+    .section-title {
+      font-size: 3rem; } }
   .section-title span {
     display: block;
     text-align: left; }
 
 .slider {
   margin-top: 10rem; }
+  @media only screen and (max-width: 1400px) {
+    .slider {
+      margin-top: 7rem; } }
 
 .slidecard {
   text-decoration: none;
@@ -823,6 +897,13 @@ body {
   width: 830px;
   margin: 0 15rem 0 5rem;
   position: relative; }
+  @media only screen and (max-width: 1400px) {
+    .slidecard {
+      height: 450px;
+      width: 700px; } }
+  @media only screen and (max-width: 770px) {
+    .slidecard {
+      width: 600px; } }
   @media only screen and (max-width: 480px) {
     .slidecard {
       flex-direction: column; } }
@@ -832,15 +913,18 @@ body {
     left: -3.5rem; }
     @media only screen and (max-width: 770px) {
       .slidecard span {
-        left: -1.5rem; } }
+        left: -2.5rem; } }
   .slidecard h3 {
     color: #171717;
     font-size: 4rem;
     letter-spacing: 0.2rem;
     transition: all 0.3s; }
+    @media only screen and (max-width: 1400px) {
+      .slidecard h3 {
+        font-size: 4rem; } }
     @media only screen and (max-width: 770px) {
       .slidecard h3 {
-        font-size: 3rem; } }
+        font-size: 3.5rem; } }
   .slidecard h3:after {
     content: "";
     display: block;
@@ -859,9 +943,12 @@ body {
   height: auto;
   max-width: 750px;
   transition: all 0.3s; }
+  @media only screen and (max-width: 1400px) {
+    .slideimg {
+      max-width: 650px; } }
   @media only screen and (max-width: 770px) {
     .slideimg {
-      max-width: 550px; } }
+      max-width: 500px; } }
   .slideimg:hover {
     transform: translatex(40px); }
 
@@ -890,7 +977,7 @@ body {
     .aboutme,
     .experience {
       width: 100%;
-      height: 80vh; } }
+      height: 70vh; } }
   .aboutme:before,
   .experience:before {
     content: "";
@@ -900,6 +987,11 @@ body {
     height: 90%;
     left: 2%;
     z-index: -1; }
+    @media only screen and (max-width: 1400px) {
+      .aboutme:before,
+      .experience:before {
+        width: 70%;
+        height: 90%; } }
     @media only screen and (max-width: 770px) {
       .aboutme:before,
       .experience:before {
@@ -914,10 +1006,13 @@ body {
   /* animation: fadeInUp 0.8s forwards; */ }
   @media only screen and (max-width: 770px) {
     .content {
-      flex-basis: 50%; } }
+      flex-basis: 40%; } }
   .content p {
     line-height: 1.75;
     width: 100%; }
+    @media only screen and (max-width: 1400px) {
+      .content p {
+        line-height: 1.5; } }
     @media only screen and (max-width: 770px) {
       .content p {
         line-height: 1.5; } }
@@ -935,6 +1030,11 @@ body {
 .experience img {
   flex-basis: 30%;
   height: auto; }
+  @media only screen and (max-width: 1400px) {
+    .aboutme img,
+    .experience img {
+      min-width: 320px;
+      max-height: 450px; } }
   @media only screen and (max-width: 770px) {
     .aboutme img,
     .experience img {
@@ -950,6 +1050,9 @@ body {
 ################################## */
 .tools {
   height: 90vh; }
+  @media only screen and (max-width: 770px) {
+    .tools {
+      height: 80vh; } }
 
 .tools__overview {
   display: grid;
@@ -1052,55 +1155,5 @@ footer {
 /* #################################
 ###########    Media Querys   ######
 ####################################*/
-@media (max-width: 1400px) {
-  .herobox__name {
-    font-size: 3.5rem; }
-
-  .herobox__subtitle {
-    font-size: 1.5rem; }
-
-  .section-title {
-    font-size: 3rem; }
-
-  .slider {
-    margin-top: 7rem; }
-
-  .slidecard h3 {
-    font-size: 3rem; }
-
-  .slidecard {
-    height: 450px;
-    width: 700px; }
-
-  .slideimg {
-    max-width: 650px; }
-
-  .aboutme:before,
-  .experience:before {
-    width: 70%;
-    height: 90%; }
-
-  .aboutme img,
-  .experience img {
-    min-width: 320px;
-    max-height: 450px; }
-
-  .content p {
-    line-height: 1.5; }
-
-  @keyframes swap_left {
-    0%, 40% {
-      transform: translatex(0%); }
-    50% {
-      transform: scale(0.5) translatex(32.5%); }
-    60%, 100% {
-      transform: translatex(52.5%); } }
-  @keyframes swap_right {
-    0%, 40% {
-      transform: translatex(0%); }
-    50% {
-      transform: scale(1.75) translatex(-20%); }
-    60%, 100% {
-      transform: translatex(-50%); } } }
 
 /*# sourceMappingURL=style.css.map */
