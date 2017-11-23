@@ -669,7 +669,7 @@ body {
   z-index: 99;
   /*Navbar and logo will always be on top*/
   pointer-events: none; }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 650px) {
     .navbox {
       display: none; } }
 
@@ -725,7 +725,7 @@ body {
   @media only screen and (max-width: 1400px) {
     .herobox__name {
       font-size: 3.5rem; } }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 650px) {
     .herobox__name {
       font-size: 2rem;
       letter-spacing: 0.2rem; } }
@@ -746,7 +746,7 @@ body {
     width: 4.5rem;
     height: 5rem;
     background-size: cover; }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 650px) {
       .herobox__logo span {
         width: 2.5rem;
         height: 3.5rem; } }
@@ -754,7 +754,7 @@ body {
     content: "<";
     display: block;
     font-size: 5rem; }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 650px) {
       .herobox__logo:before, .herobox__logo:after {
         font-size: 3.5rem; } }
   .herobox__logo:after {
@@ -773,7 +773,7 @@ body {
   @media only screen and (max-width: 1400px) {
     .herobox__subtitle {
       font-size: 1.5rem; } }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 650px) {
     .herobox__subtitle {
       font-size: 1rem; } }
 
@@ -869,9 +869,12 @@ body {
 .projects {
   height: 90vh;
   background-color: rgba(100, 100, 100, 0.1); }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 650px) {
     .projects {
       height: 80vh; } }
+  @media only screen and (max-height: 700px) {
+    .projects {
+      height: 100vh; } }
 
 .section-title {
   text-align: center;
@@ -881,23 +884,29 @@ body {
   @media only screen and (max-width: 1400px) {
     .section-title {
       font-size: 3rem; } }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 1400px) {
+    .section-title {
+      font-size: 2.5rem; } }
+  @media only screen and (max-width: 650px) {
     .section-title {
       font-size: 2.5rem; } }
   .section-title span {
     display: block;
     text-align: left; }
+    @media only screen and (max-height: 700px) {
+      .section-title span {
+        display: inline-block; } }
 
 .slider {
   margin-top: 7rem; }
   @media only screen and (max-width: 1400px) {
     .slider {
       margin-top: 3rem; } }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 650px) {
     .slider {
       margin-top: 10rem; } }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 650px) {
   .flickity-page-dots {
     display: none; } }
 
@@ -914,10 +923,13 @@ body {
     .slidecard {
       height: 450px;
       width: 700px; } }
-  @media only screen and (max-width: 770px) {
+  @media only screen and (max-width: 830px) {
     .slidecard {
       width: 600px; } }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-height: 700px) {
+    .slidecard {
+      height: 60vh; } }
+  @media only screen and (max-width: 650px) {
     .slidecard {
       flex-direction: column;
       justify-content: flex-end;
@@ -927,10 +939,10 @@ body {
     display: block;
     position: relative;
     left: -3.5rem; }
-    @media only screen and (max-width: 770px) {
+    @media only screen and (max-width: 830px) {
       .slidecard span {
         left: -2.5rem; } }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 650px) {
       .slidecard span {
         left: unset;
         text-align: center; } }
@@ -942,15 +954,18 @@ body {
     @media only screen and (max-width: 1400px) {
       .slidecard h3 {
         font-size: 4rem; } }
-    @media only screen and (max-width: 770px) {
+    @media only screen and (max-width: 830px) {
       .slidecard h3 {
         font-size: 3.5rem; } }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 650px) {
       .slidecard h3 {
         font-size: 2rem;
         position: relative;
         order: 2;
         top: 10vh; } }
+    @media only screen and (max-height: 700px) {
+      .slidecard h3 {
+        font-size: 2.5rem; } }
   .slidecard h3:after {
     content: "";
     display: block;
@@ -959,10 +974,10 @@ body {
     background-color: goldenrod;
     position: absolute;
     left: -3.5rem; }
-    @media only screen and (max-width: 770px) {
+    @media only screen and (max-width: 830px) {
       .slidecard h3:after {
         left: -1.5rem; } }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 650px) {
       .slidecard h3:after {
         left: calc(50% - 1.5rem);
         height: 0.3rem; } }
@@ -976,12 +991,12 @@ body {
   @media only screen and (max-width: 1400px) {
     .slideimg {
       max-width: 650px; } }
-  @media only screen and (max-width: 770px) {
+  @media only screen and (max-width: 830px) {
     .slideimg {
       max-width: 500px; } }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 650px) {
     .slideimg {
-      max-width: 275px;
+      width: 275px;
       position: relative;
       top: 50%; } }
   .slideimg:hover {
@@ -1008,12 +1023,16 @@ body {
   justify-content: space-around;
   align-items: center;
   margin-top: 2rem; }
-  @media only screen and (max-width: 770px) {
+  @media only screen and (max-width: 830px) {
     .aboutme,
     .experience {
       width: 100%;
       height: 70vh; } }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-height: 700px) {
+    .aboutme,
+    .experience {
+      height: 100vh; } }
+  @media only screen and (max-width: 650px) {
     .aboutme,
     .experience {
       height: 90vh; } }
@@ -1031,11 +1050,16 @@ body {
       .experience:before {
         width: 70%;
         height: 90%; } }
-    @media only screen and (max-width: 770px) {
+    @media only screen and (max-width: 830px) {
       .aboutme:before,
       .experience:before {
         max-height: 65%; } }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-height: 700px) {
+      .aboutme:before,
+      .experience:before {
+        max-height: 85%;
+        width: 80%; } }
+    @media only screen and (max-width: 650px) {
       .aboutme:before,
       .experience:before {
         width: 100%;
@@ -1049,10 +1073,13 @@ body {
   flex-basis: 35%;
   max-height: 70%;
   /* animation: fadeInUp 0.8s forwards; */ }
-  @media only screen and (max-width: 770px) {
+  @media only screen and (max-width: 830px) {
     .content {
-      flex-basis: 40%; } }
-  @media only screen and (max-width: 480px) {
+      flex-basis: 60%; } }
+  @media only screen and (max-height: 700px) {
+    .content {
+      max-height: 90%; } }
+  @media only screen and (max-width: 650px) {
     .content {
       flex-basis: 90%;
       max-height: 90%; } }
@@ -1062,15 +1089,19 @@ body {
     @media only screen and (max-width: 1400px) {
       .content p {
         line-height: 1.5; } }
-    @media only screen and (max-width: 770px) {
+    @media only screen and (max-width: 830px) {
       .content p {
         line-height: 1.5; } }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-height: 700px) {
+      .content p {
+        line-height: 1.3;
+        font-size: 1rem; } }
+    @media only screen and (max-width: 650px) {
       .content p {
         line-height: 1.75; } }
   .content a {
     color: #171717; }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 650px) {
       .content a {
         margin-top: 2rem; } }
   .content h2:after {
@@ -1080,7 +1111,7 @@ body {
     width: 3rem;
     background-color: goldenrod;
     margin-top: 1rem; }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 650px) {
       .content h2:after {
         margin-bottom: 1rem; } }
 
@@ -1093,11 +1124,12 @@ body {
     .experience img {
       min-width: 320px;
       max-height: 450px; } }
-  @media only screen and (max-width: 770px) {
+  @media only screen and (max-width: 830px) {
     .aboutme img,
     .experience img {
-      flex-basis: 25%; } }
-  @media only screen and (max-width: 480px) {
+      min-width: 220px;
+      height: auto; } }
+  @media only screen and (max-width: 650px) {
     .aboutme img,
     .experience img {
       display: none; } }
@@ -1105,7 +1137,7 @@ body {
 /* ##### Experience section differences #### */
 .experience:before {
   left: 28%; }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 650px) {
     .experience:before {
       left: unset; } }
 
@@ -1114,9 +1146,12 @@ body {
 ################################## */
 .tools {
   height: 90vh; }
-  @media only screen and (max-width: 770px) {
+  @media only screen and (max-width: 830px) {
     .tools {
       height: 80vh; } }
+  @media only screen and (max-height: 700px) {
+    .tools {
+      height: 100vh; } }
 
 .tools__overview {
   display: grid;
@@ -1126,13 +1161,19 @@ body {
   grid-auto-rows: 20vh;
   justify-items: center;
   align-items: center; }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-height: 700px) {
+    .tools__overview {
+      width: 90%; } }
+  @media only screen and (max-width: 650px) {
     .tools__overview {
       width: 90%; } }
   .tools__overview > i {
     font-size: 6rem;
     color: goldenrod; }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-height: 700px) {
+      .tools__overview > i {
+        font-size: 5rem; } }
+    @media only screen and (max-width: 650px) {
       .tools__overview > i {
         font-size: 5rem; } }
 
@@ -1149,9 +1190,12 @@ body {
   height: 40vh;
   margin: 0 2%;
   position: relative; }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 650px) {
     .contact {
       height: 50vh; } }
+  @media only screen and (max-height: 700px) {
+    .contact {
+      height: 80vh; } }
 
 .contact__content {
   height: 100%;
@@ -1163,7 +1207,7 @@ body {
     text-decoration: none;
     color: silver;
     font-size: 2.5rem; }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 650px) {
       .contact__content > a {
         font-size: 1.5rem; } }
 
@@ -1174,7 +1218,7 @@ body {
   animation: slideInLeft 0.5s forwards; }
   .slideInTriggered:after {
     content: "";
-    background-color: rgba(218, 165, 32, 0.5);
+    background-color: #4e7080;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1188,10 +1232,10 @@ body {
   width: 20%;
   display: flex;
   justify-content: space-around; }
-  @media only screen and (max-width: 770px) {
+  @media only screen and (max-width: 830px) {
     .social {
       width: 50%; } }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 650px) {
     .social {
       width: 80%; } }
   .social a {
@@ -1220,7 +1264,7 @@ footer {
   background-color: rgba(100, 100, 100, 0.1);
   display: flex;
   align-items: center; }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 650px) {
     footer {
       height: 20vh; } }
 
@@ -1230,7 +1274,7 @@ footer {
   align-items: center;
   width: 80%;
   margin: 0 auto; }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 650px) {
     .footercontent {
       height: 80%;
       flex-direction: column; } }
