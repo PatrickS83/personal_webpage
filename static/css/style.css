@@ -669,9 +669,17 @@ body {
   z-index: 99;
   /*Navbar and logo will always be on top*/
   pointer-events: none; }
+  @media only screen and (max-width: 830px) {
+    .navbox {
+      padding: 0.2rem 0; } }
   @media only screen and (max-width: 560px) {
     .navbox {
       display: none; } }
+
+@media only screen and (max-width: 830px) {
+  .navbox__navbar .sitelink {
+    font-size: 1.1rem;
+    margin-right: 1.5rem; } }
 
 .navbox.open {
   background-color: #1e2b31;
@@ -682,6 +690,10 @@ body {
   flex: 1;
   margin: 1rem 3%;
   height: 3rem; }
+  @media only screen and (max-width: 830px) {
+    .navbox__logo {
+      height: 2.5rem;
+      margin: 0.5rem 3%; } }
   .navbox__logo a {
     background: url(../img/logo2.svg) no-repeat;
     display: block;

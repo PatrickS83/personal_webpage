@@ -4,13 +4,6 @@
 @import 'animations';
 
 
-$color1: rgba(5, 102, 141, 1);
-$color2: rgba(2, 128, 144, 1);
-$color3: rgba(0, 168, 150, 1);
-$color4: rgba(2, 195, 154, 1);
-$color5: rgba(240, 243, 189, 1);
-
-
 html {
     box-sizing: border-box;
   }
@@ -92,8 +85,18 @@ body{
     transition: background-color ease-in 0.5s;
     z-index: 99;    /*Navbar and logo will always be on top*/
     pointer-events: none;
+    @include respond-to($tablet-portrait) {
+        padding: 0.2rem 0;
+    }
     @include respond-to($phone) {
         display: none; //change later!!
+    }
+}
+
+.navbox__navbar .sitelink{
+    @include respond-to($tablet-portrait) {
+        font-size: 1.1rem;
+        margin-right: 1.5rem;
     }
 }
 
@@ -107,6 +110,10 @@ body{
     flex: 1;
     margin: 1rem 3%;
     height: 3rem;
+    @include respond-to($tablet-portrait) {
+        height: 2.5rem;
+        margin: 0.5rem 3%;
+    }
 
     a {
         background: url(../img/logo2.svg) no-repeat;
