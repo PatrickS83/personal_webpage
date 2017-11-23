@@ -339,9 +339,9 @@ body{
     @include respond-to($phone) {
         height: 80vh;
     }
-    @include respond-to($big-landscape) {
-        height: 100vh;
-    }
+     @include respond-to($big-landscape) {
+         height: 100vh;
+     }
 }
 
 .section-title {
@@ -352,7 +352,7 @@ body{
     @include respond-to($laptop) {
         font-size: 3rem;
     }
-    @include respond-to($laptop) {
+    @include respond-to($big-landscape) {
         font-size: 2.5rem;
     }
     @include respond-to($phone) {
@@ -390,7 +390,7 @@ body{
     margin: 0 15rem 0 5rem;
     position: relative;
     @include respond-to($laptop) {
-        height: 450px;
+        height: 400px;
         width: 700px;
     }
     @include respond-to($tablet-portrait) {
@@ -398,6 +398,7 @@ body{
     }
     @include respond-to($big-landscape) {
         height: 60vh;
+        width: 500px;
     }
     @include respond-to($phone) {
         flex-direction: column;
@@ -449,6 +450,8 @@ body{
         @include respond-to($tablet-portrait) {
             left: -1.5rem;
         }
+        @include respond-to($big-landscape) {
+            left: -2.5rem;}
         @include respond-to($phone) {
             left: calc(50% - 1.5rem);
             height: 0.3rem;
@@ -467,7 +470,7 @@ body{
     @include respond-to($laptop) {
         max-width: 650px;}
     @include respond-to($tablet-portrait) {
-        max-width: 500px;}
+        max-width: 400px;}
     @include respond-to($phone) {
         width: 275px;
         position: relative;
@@ -520,7 +523,7 @@ body{
         left: 2%;
         z-index: -1;
         @include respond-to($laptop) {
-            width: 70%;
+            width: 65%;
             height: 90%;
         }
         @include respond-to($tablet-portrait) {
@@ -529,7 +532,8 @@ body{
         @include respond-to($big-landscape) {
             max-height: 85%;
             width: 80%;}
-
+        @include respond-to($small-landscape) {
+            max-height: 95%;}
         @include respond-to($phone) {
             width: 100%;
             left: unset;
@@ -548,6 +552,7 @@ body{
     }
     @include respond-to($big-landscape) {
         max-height: 90%;
+        flex-basis: 50%;
     }
 
     @include respond-to($phone) {
@@ -598,12 +603,14 @@ body{
     flex-basis: 30%;
     height: auto;
     @include respond-to($laptop) {
-        min-width: 320px;
-        max-height: 450px;
+        // min-width: 300px;
+        width: auto;
+        max-height: 400px;
+        flex-basis: 25%;
     }
     @include respond-to($tablet-portrait) {
-        min-width: 220px;
-        height: auto;
+        // min-width: 220px;
+        max-height: 300px;
     }
     @include respond-to($phone) {
         display:none;}
@@ -650,6 +657,8 @@ body{
         color: goldenrod;
         @include respond-to($big-landscape) {
             font-size: 5rem;}
+        @include respond-to($small-landscape) {
+            font-size: 4rem;}
         @include respond-to($phone) {
             font-size: 5rem;}
     }
@@ -679,7 +688,6 @@ body{
     @include respond-to($big-landscape) {
         height: 80vh;
     }
-
 }
 
 .contact__content {
