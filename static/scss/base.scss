@@ -555,7 +555,7 @@ body{
     flex-basis: 35%;
     max-height: 70%;
     @include respond-to($tablet-portrait) {
-        flex-basis: 60%;
+        flex-basis: 40%;
     }
     @include respond-to($big-landscape) {
         max-height: 90%;
@@ -613,12 +613,15 @@ body{
         // min-width: 300px;
         width: auto;
         max-height: 400px;
-        flex-basis: 25%;
+        flex-basis: 40%;
     }
     @include respond-to($tablet-portrait) {
         // min-width: 220px;
-        max-height: 300px;
+        max-height: 400px;
     }
+    @include respond-to($big-landscape) {
+        max-height: 300px;}
+
     @include respond-to($phone) {
         display:none;}
 }
