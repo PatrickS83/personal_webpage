@@ -341,13 +341,13 @@ body{
 ########################################## */
 
 .projects {
-    height: 90vh;
+    height: 40em;
     background-color: rgba(100,100,100,0.1);
     @include respond-to($phone) {
-        height: 80vh;
+        height: 30em;
     }
      @include respond-to($big-landscape) {
-         height: 100vh;
+         height: 30em;
      }
 }
 
@@ -440,7 +440,7 @@ body{
             font-size: 2rem;
             position: relative;
             order: 2;
-            top: 10vh;
+            top: 2em;
         }
         @include respond-to($big-landscape) {
             font-size: 2.5rem;}
@@ -481,7 +481,7 @@ body{
     @include respond-to($phone) {
         width: 275px;
         position: relative;
-        top: 50%}
+        top: 6em}
 
     &:hover{
         transform: translatex(40px);
@@ -519,7 +519,7 @@ body{
     @include respond-to($big-landscape) {
         height: 100vh;}
     @include respond-to($phone) {
-        height: 90vh;}
+        height: 30em; }
 
     &:before {
         content: "";
