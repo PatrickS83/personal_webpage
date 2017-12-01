@@ -341,7 +341,7 @@ body{
 ########################################## */
 
 .projects {
-    height: 40em;
+    padding-bottom: 5em;
     background-color: rgba(100,100,100,0.1);
     @include respond-to($phone) {
         height: 30em;
@@ -375,11 +375,11 @@ body{
 }
 
 .slider {
-    margin-top: 7rem;
+    margin-top: 7em;
     @include respond-to($laptop) {
-        margin-top: 3rem;}
+        margin-top: 3em;}
     @include respond-to($phone) {
-        margin-top: 10rem;}
+        margin-top: 6em;}
 }
 
 .flickity-page-dots {
@@ -472,12 +472,12 @@ body{
 
 .slideimg {
     height: auto;
-    max-width: 750px;
+    max-width: 45em;
     transition: all 0.3s;
     @include respond-to($laptop) {
-        max-width: 650px;}
+        max-width: 40em;}
     @include respond-to($tablet-portrait) {
-        max-width: 400px;}
+        max-width: 30em;}
     @include respond-to($phone) {
         width: 275px;
         position: relative;

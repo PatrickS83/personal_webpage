@@ -879,7 +879,7 @@ body {
 ########     Project Section     #########
 ########################################## */
 .projects {
-  height: 40em;
+  padding-bottom: 5em;
   background-color: rgba(100, 100, 100, 0.1); }
   @media only screen and (max-width: 600px) {
     .projects {
@@ -910,13 +910,13 @@ body {
         display: inline-block; } }
 
 .slider {
-  margin-top: 7rem; }
+  margin-top: 7em; }
   @media only screen and (max-width: 1400px) {
     .slider {
-      margin-top: 3rem; } }
+      margin-top: 3em; } }
   @media only screen and (max-width: 600px) {
     .slider {
-      margin-top: 10rem; } }
+      margin-top: 6em; } }
 
 @media only screen and (max-width: 600px) {
   .flickity-page-dots {
@@ -1002,14 +1002,14 @@ body {
 
 .slideimg {
   height: auto;
-  max-width: 750px;
+  max-width: 45em;
   transition: all 0.3s; }
   @media only screen and (max-width: 1400px) {
     .slideimg {
-      max-width: 650px; } }
+      max-width: 40em; } }
   @media only screen and (max-width: 830px) {
     .slideimg {
-      max-width: 400px; } }
+      max-width: 30em; } }
   @media only screen and (max-width: 600px) {
     .slideimg {
       width: 275px;
