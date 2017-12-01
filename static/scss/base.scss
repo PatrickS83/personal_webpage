@@ -535,6 +535,7 @@ body{
         }
         @include respond-to($tablet-portrait) {
             max-height: 65%;
+            width: 70%;
         }
         @include respond-to($big-landscape) {
             max-height: 85%;
