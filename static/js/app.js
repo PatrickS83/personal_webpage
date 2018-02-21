@@ -19,8 +19,8 @@ class Controller {
 
   // listens to clicks on the navbar burger icon
   navBarClickListener() {
-    this.elements.navBurger.addEventListener('click', function navToggle() {
-      this.classList.toggle('open');
+    this.elements.navBurger.addEventListener('click', () => {
+      this.elements.navBurger.classList.toggle('open');
       this.elements.navBar.classList.toggle('open');
       this.elements.navBox.classList.toggle('open');
     });
