@@ -123,67 +123,9 @@
     </footer>
 
     <script src="./static/js/particles.min.js"></script>
+    <script src="./static/js/lib/particleData.js"></script>
     <script src="./static/js/app.js"></script>
     <script src="./static/js/flickity.pkgd.min.js"></script>
-    <script>
-        window.onload = function () {
-            document.getElementById('navbox__burgercontainer').addEventListener('click', function () {
-            this.classList.toggle('open');
-            document.querySelector('.navbox__navbar').classList.toggle('open');
-            document.querySelector('.navbox').classList.toggle('open');
-            })
-        };
-    </script>
-    <script>
-        // script for close navbar on scroll
-        var didScroll = false;
 
-        function toggleNavbar() {
-            didScroll = true;
-        }
-
-        window.onscroll = toggleNavbar;
-
-        setInterval(function toggleNavigation() {
-            // opens navbar at top of the page
-            if(didScroll === true && window.pageYOffset <= 100) {
-                didScroll = false;
-                document.getElementById('navbox__burgercontainer').classList.add('open');
-                document.querySelector('.navbox__navbar').classList.remove('open');
-                document.querySelector('.navbox').classList.add('open');
-            }
-            // closes navbar on scrolling if not on top of page
-            else if(didScroll) {
-                didScroll = false;
-                document.getElementById('navbox__burgercontainer').classList.remove('open');
-                document.querySelector('.navbox__navbar').classList.add('open');
-                document.querySelector('.navbox').classList.remove('open');
-            }
-        }, 250);
-    </script>
-    <script>
-        // Script for onscroll in viewport Animations
-        var toolsIcons = document.querySelectorAll('.fadeInUp');
-        var contactSection = document.querySelector('.contact__content')
-
-        // checks if an element entered viewport
-        function isInViewport(element) {
-          let bounding = element.getBoundingClientRect();
-          return (
-            bounding.top >= 0 &&
-            bounding.left >= 0 &&
-            bounding.bottom <= (window.innerHeight * 1|| document.documentElement.clientHeight * 1) &&
-            bounding.right <= (window.innerWidth * 1|| document.documentElement.clientWidth * 1)
-          );
-        };
-
-        //triggers animation for elements that entered the viewport
-        setInterval(function triggerAnimation() {
-          for (let icon of toolsIcons) {
-            if (isInViewport(icon)) icon.classList.add('fadeInUpTriggered');
-          };
-          if (isInViewport(contactSection)) contactSection.classList.add('slideInTriggered');
-        }, 150);
-    </script>
 </body>
 </html>
