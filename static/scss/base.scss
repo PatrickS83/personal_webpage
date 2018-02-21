@@ -341,7 +341,7 @@ body{
 ########################################## */
 
 .projects {
-    height: 40em;
+    padding-bottom: 5em;
     background-color: rgba(100,100,100,0.1);
     @include respond-to($phone) {
         height: 30em;
@@ -365,6 +365,10 @@ body{
     @include respond-to($phone) {
         font-size: 2.5rem;
     }
+    @include respond-to($small-phone) {
+        font-size: 2rem;
+    }
+
 
     span {
         display: block;
@@ -375,11 +379,11 @@ body{
 }
 
 .slider {
-    margin-top: 7rem;
+    margin-top: 7em;
     @include respond-to($laptop) {
-        margin-top: 3rem;}
+        margin-top: 3em;}
     @include respond-to($phone) {
-        margin-top: 10rem;}
+        margin-top: 6em;}
 }
 
 .flickity-page-dots {
@@ -472,12 +476,12 @@ body{
 
 .slideimg {
     height: auto;
-    max-width: 750px;
+    max-width: 45em;
     transition: all 0.3s;
     @include respond-to($laptop) {
-        max-width: 650px;}
+        max-width: 40em;}
     @include respond-to($tablet-portrait) {
-        max-width: 400px;}
+        max-width: 30em;}
     @include respond-to($phone) {
         width: 275px;
         position: relative;
@@ -505,36 +509,40 @@ body{
 ########################################## */
 .aboutme,
 .experience {
-    height: 100vh;
+    height: 90vh;
     width: 80%;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-top: 2rem;
+    position: relative;
     @include respond-to($tablet-portrait) {
         width: 100%;
-        height: 70vh;
+        height: 80vh;
     }
     @include respond-to($big-landscape) {
-        height: 100vh;}
+        height: 100vh;
+    }
     @include respond-to($phone) {
-        height: 30em; }
+        height: 30em;
+    }
 
     &:before {
         content: "";
         background-color: rgba(100,100,100,0.1);
         position: absolute;
-        width: 70%;
+        width: 75%;
         height: 90%;
         left: 2%;
         z-index: -1;
         @include respond-to($laptop) {
-            width: 65%;
+            width: 80%;
             height: 90%;
         }
         @include respond-to($tablet-portrait) {
-            max-height: 65%;
+            max-height: 85%;
+            width: 70%;
         }
         @include respond-to($big-landscape) {
             max-height: 85%;
@@ -581,6 +589,10 @@ body{
         }
         @include respond-to($phone) {
             line-height: 1.75;}
+        @include respond-to($small-phone) {
+            line-height: 1.2;
+            font-size: 0.9rem;
+        }
 
     }
 
@@ -588,6 +600,10 @@ body{
         color: rgba(23,23,23, 1);
         @include respond-to($phone) {
             margin-top: 2rem;}
+        @include respond-to($small-phone) {
+            margin-top: 0.5rem;
+        }
+
     }
 
 
@@ -638,22 +654,22 @@ body{
 ####### Tools section ###########
 ################################## */
 
-.tools {
-    height: 90vh;
-    @include respond-to($tablet-portrait) {
-        height: 80vh;
-    }
-    @include respond-to($big-landscape) {
-        height: 100vh;
-    }
-}
+// .tools {
+//     height: 90vh;
+//     @include respond-to($tablet-portrait) {
+//         height: 80vh;
+//     }
+//     @include respond-to($big-landscape) {
+//         height: 100vh;
+//     }
+// }
 
 .tools__overview {
     display: grid;
     width: 70%;
-    margin: 2.5% auto 2.5% auto;
+    margin: 2em auto 2em auto;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: 20vh;
+    // grid-auto-rows: 20vh;
     justify-items: center;
     align-items: center;
     @include respond-to($big-landscape) {
@@ -664,6 +680,7 @@ body{
 
     & > i {
         font-size: 6rem;
+        padding: 1rem 0;
         color: goldenrod;
         @include respond-to($big-landscape) {
             font-size: 5rem;}
@@ -713,6 +730,9 @@ body{
         font-size: 2.5rem;
         @include respond-to($phone) {
             font-size: 1.5rem;}
+        @include respond-to($small-phone) {
+            font-size: 1.2rem;
+        }
     }
 }
 
@@ -749,7 +769,7 @@ body{
 
     a {
         text-decoration: none;
-        color: black
+        color: black;
     }
 }
 
@@ -758,7 +778,7 @@ body{
 }
 
 .section-title--underscore {
-    padding-top: 5vh;
+    padding-top: 1em;
 
     &:after{
         content: "";
@@ -774,13 +794,13 @@ body{
 ################################## */
 
 footer {
-    height: 10vh;
+    height: 5em;
     margin: 0 2%;
     background-color: rgba(100,100,100,0.1);
     display: flex;
     align-items: center;
     @include respond-to($phone) {
-        height: 20vh;}
+        height: 10em;}
 
 }
 
