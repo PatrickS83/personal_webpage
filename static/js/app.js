@@ -4,7 +4,9 @@ class Controller {
     this.elements = {
       navBurger: document.getElementById('navbox__burgercontainer'),
       navBar: document.querySelector('.navbox__navbar'),
-      navBox: document.querySelector('.navbox')
+      navBox: document.querySelector('.navbox'),
+      toolsIcons: document.querySelectorAll('.fadeInUp'),
+      contactSection: document.querySelector('.contact__content')
     };
     this.init();
   }
@@ -12,6 +14,7 @@ class Controller {
   init() {
     this.navBarClickListener();
     this.navBarScrollListener();
+    this.iconScrollListener();
   }
 
   // listens to clicks on the navbar burger icon
@@ -49,31 +52,31 @@ class Controller {
       }
     }, 250);
   }
-}
 
-
-// Script for onscroll in viewport Animations
-const toolsIcons = document.querySelectorAll('.fadeInUp');
-const contactSection = document.querySelector('.contact__content');
-
-// checks if an element entered viewport
-function isInViewport(element) {
-  const bounding = element.getBoundingClientRect();
-  return (
-    bounding.top >= 0
+  // triggers interval to fade in skill icons that enter screen area
+  iconScrollListener() {
+    // checks if an element entered viewport
+    function isInViewport(element) {
+      const bounding = element.getBoundingClientRect();
+      return (
+        bounding.top >= 0
     && bounding.left >= 0
     && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
     && bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
+      );
+    }
 
-// triggers animation for elements that entered the viewport
-setInterval(() => {
-  toolsIcons.forEach((icon) => {
-    if (isInViewport(icon)) icon.classList.add('fadeInUpTriggered');
-  });
-  if (isInViewport(contactSection)) contactSection.classList.add('slideInTriggered');
-}, 150);
+    // triggers animation for elements that entered the viewport
+    setInterval(() => {
+      this.elements.toolsIcons.forEach((icon) => {
+        if (isInViewport(icon)) icon.classList.add('fadeInUpTriggered');
+      });
+      if (isInViewport(this.elements.contactSection)) {
+        this.elements.contactSection.classList.add('slideInTriggered');
+      }
+    }, 150);
+  }
+}
 
 
 const control = new Controller();
