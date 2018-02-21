@@ -2,6 +2,8 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
+/* eslint-disable */
+
 var Stats = function () {
 
 	var startTime = Date.now(), prevTime = startTime;
