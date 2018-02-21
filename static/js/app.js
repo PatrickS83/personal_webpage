@@ -10,43 +10,47 @@ class Controller {
   }
 
   init() {
-    this.navBarListener();
+    this.navBarClickListener();
+    this.navBarScrollListener();
   }
 
-  navBarListener() {
+  // listens to clicks on the navbar burger icon
+  navBarClickListener() {
     this.elements.navBurger.addEventListener('click', function navToggle() {
       this.classList.toggle('open');
       this.elements.navBar.classList.toggle('open');
       this.elements.navBox.classList.toggle('open');
     });
   }
-}
 
+  // listens to scroll event to open/close navbar
+  navBarScrollListener() {
+    let didScroll = false;
 
-// script for close navbar on scroll
-let didScroll = false;
+    function toggleNavbar() {
+      didScroll = true;
+    }
 
-function toggleNavbar() {
-  didScroll = true;
-}
+    window.onscroll = toggleNavbar;
 
-window.onscroll = toggleNavbar;
-
-setInterval(() => {
-  // opens navbar at top of the page
-  if (didScroll === true && window.pageYOffset <= 100) {
-    didScroll = false;
-    document.getElementById('navbox__burgercontainer').classList.add('open');
-    document.querySelector('.navbox__navbar').classList.remove('open');
-    document.querySelector('.navbox').classList.add('open');
-    // closes navbar on scrolling if not on top of page
-  } else if (didScroll) {
-    didScroll = false;
-    document.getElementById('navbox__burgercontainer').classList.remove('open');
-    document.querySelector('.navbox__navbar').classList.add('open');
-    document.querySelector('.navbox').classList.remove('open');
+    setInterval(() => {
+      // opens navbar at top of the page
+      if (didScroll === true && window.pageYOffset <= 100) {
+        didScroll = false;
+        this.elements.navBurger.classList.add('open');
+        this.elements.navBar.classList.remove('open');
+        this.elements.navBox.classList.add('open');
+        // closes navbar on scrolling if not on top of page
+      } else if (didScroll) {
+        didScroll = false;
+        this.elements.navBurger.classList.remove('open');
+        this.elements.navBar.classList.add('open');
+        this.elements.navBox.classList.remove('open');
+      }
+    }, 250);
   }
-}, 250);
+}
+
 
 // Script for onscroll in viewport Animations
 const toolsIcons = document.querySelectorAll('.fadeInUp');
