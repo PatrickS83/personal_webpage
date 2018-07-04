@@ -5,6 +5,7 @@ class Controller {
       navBar: document.querySelector('.navbox__navbar'),
       navBox: document.querySelector('.navbox'),
       herosite: document.querySelector('.herosite'),
+      herobox: document.querySelector('.herobox'),
       toolsIcons: document.querySelectorAll('.fadeInUp'),
       contactSection: document.querySelector('.contact__content')
     };
@@ -20,7 +21,7 @@ class Controller {
 
   // fix 100vh problems in mobile browsers
   setHeroHeight() {
-    const { herosite } = this.elements;
+    const { herosite, herobox } = this.elements;
     if (
       navigator.userAgent.match(/Android/i) ||
       navigator.userAgent.match(/webOS/i) ||
@@ -29,8 +30,10 @@ class Controller {
       navigator.userAgent.match(/iPod/i) ||
       navigator.userAgent.match(/BlackBerry/i) ||
       navigator.userAgent.match(/Windows Phone/i)
-    )
+    ) {
       herosite.style.height = window.innerHeight + 'px';
+      herobox.style.height = window.innerHeight + 'px';
+    }
     // window.addEventListener('resize', () => {
     //   herosite.style.height = window.innerHeight + 'px';
     // });
