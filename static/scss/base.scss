@@ -3,249 +3,250 @@
 @import 'mixins';
 @import 'animations';
 
-
 html {
-    box-sizing: border-box;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-
-  /* Begin page styling */
-
-body{
-    font-family: 'Poppins', sans-serif;
-    width: 100%;
-    font-size: 16px;
-    overflow-x: hidden;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
-.count-particles{
-    border-radius: 0 0 3px 3px;
-    position: absolute;
-  }
+/* Begin page styling */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+.count-particles {
+  border-radius: 0 0 3px 3px;
+  position: absolute;
+}
 
 .herosite {
-    height: 100vh;
-    background: linear-gradient(
-        90deg,
-        lighten(#1e2b31, 0) 0%,
-        lighten(#1e2b31, 0) 50%,
-        lighten(#1e2b31, 5) 50%,
-        lighten(#1e2b31, 5) 100%);
+  height: 100vh;
+  background: linear-gradient(
+    90deg,
+    lighten(#1e2b31, 0) 0%,
+    lighten(#1e2b31, 0) 50%,
+    lighten(#1e2b31, 5) 50%,
+    lighten(#1e2b31, 5) 100%
+  );
 
-    &:before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        z-index: 300;
-        background-color: white;
-        animation: slideOut 0.7s forwards ease-in-out;
-    }
-     /* Golden Border on bottom of landing page */
-    &:after {
-        content: "";
-        width: 100%;
-        height: 0.5rem;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        background-color: goldenrod;
-    }
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 300;
+    background-color: white;
+    animation: slideOut 1.2s forwards ease-in-out;
+  }
+  /* Golden Border on bottom of landing page */
+  &:after {
+    content: '';
+    width: 100%;
+    height: 0.5rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: goldenrod;
+  }
 }
 
 .downarrow {
-    width: 3rem;
-    height: 2rem;
-    background: url(../img/arrow_down.svg) no-repeat;
-    bottom: 3%;
-    position: absolute;
-    opacity: 0;
-    pointer-events: all;
-    cursor: pointer;
-    animation: fadeInUp 1s forwards 1.5s, bounce 1.5s infinite 1.5s;
-    transform-origin: center bottom;
+  width: 3rem;
+  height: 2rem;
+  background: url(../img/arrow_down.svg) no-repeat;
+  bottom: 3%;
+  position: absolute;
+  opacity: 0;
+  pointer-events: all;
+  cursor: pointer;
+  animation: fadeInUp 1s forwards 1.5s, bounce 1.5s infinite 1.5s;
+  transform-origin: center bottom;
 }
 
 /* ##########################################
 #############Styling of Navbar ##############
 #############################################*/
 
-.navbox{
-    padding: 0.4rem 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    background-color: transparent;
-    transition: background-color ease-in 0.5s;
-    z-index: 99;    /*Navbar and logo will always be on top*/
-    pointer-events: none;
-    @include respond-to($tablet-portrait) {
-        padding: 0.2rem 0;
-    }
-    @include respond-to($phone) {
-        display: none; //change later!!
-    }
+.navbox {
+  padding: 0.4rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  background-color: transparent;
+  transition: background-color ease-in 0.5s;
+  z-index: 99; /*Navbar and logo will always be on top*/
+  pointer-events: none;
+  @include respond-to($tablet-portrait) {
+    padding: 0.2rem 0;
+  }
+  @include respond-to($phone) {
+    display: none; //change later!!
+  }
 }
 
-.navbox__navbar .sitelink{
-    @include respond-to($tablet-portrait) {
-        font-size: 1.1rem;
-        margin-right: 1.5rem;
-    }
+.navbox__navbar .sitelink {
+  @include respond-to($tablet-portrait) {
+    font-size: 1.1rem;
+    margin-right: 1.5rem;
+  }
 }
 
 .navbox.open {
-    background-color: #1e2b31;
-    opacity: 0.9;
-    pointer-events: all;
+  background-color: #1e2b31;
+  opacity: 0.9;
+  pointer-events: all;
 }
 
 .navbox__logo {
-    flex: 1;
-    margin: 1rem 3%;
-    height: 3rem;
-    @include respond-to($tablet-portrait) {
-        height: 2.5rem;
-        margin: 0.5rem 3%;
-    }
+  flex: 1;
+  margin: 1rem 3%;
+  height: 3rem;
+  @include respond-to($tablet-portrait) {
+    height: 2.5rem;
+    margin: 0.5rem 3%;
+  }
 
-    a {
-        background: url(../img/logo2.svg) no-repeat;
-        display: block;
-        height: 100%;
-        width: 5rem;
-        pointer-events: all;
-    }
+  a {
+    background: url(../img/logo2.svg) no-repeat;
+    display: block;
+    height: 100%;
+    width: 5rem;
+    pointer-events: all;
+  }
 }
 
-.navbox__navbar{
-    padding: 0;
-    margin: 0;
-    visibility: visible;
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    transition: all ease-in-out 0.5s;
-    position: relative;
+.navbox__navbar {
+  padding: 0;
+  margin: 0;
+  visibility: visible;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  transition: all ease-in-out 0.5s;
+  position: relative;
 }
-
 
 /* Navbar slidein animation  */
 
 .navbox__navbar.open {
-    visibility: hidden;
-    opacity: 0;
-    transform: translatex(100%) scale(0.1);
+  visibility: hidden;
+  opacity: 0;
+  transform: translatex(100%) scale(0.1);
 }
-
 
 /* Styling of Herotext */
 
 .herobox {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: goldenrod;
-    pointer-events: none;
-    }
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: goldenrod;
+  pointer-events: none;
+}
 
 .herobox__name {
-    font-size: 4rem;
-    letter-spacing: 0.5rem;
-    text-transform: uppercase;
-    align-self: center;
-    margin: 0 0 1rem 0;
-    @include respond-to($laptop) {
-        font-size: 3.5rem;
-    }
-    @include respond-to($phone) {
-        font-size: 2rem;
-        letter-spacing: 0.2rem;
-    }
+  font-size: 4rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  align-self: center;
+  margin: 0 0 1rem 0;
+  @include respond-to($laptop) {
+    font-size: 3.5rem;
+  }
+  @include respond-to($phone) {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+  }
 
-    &:after{
-        content: "";
-        display: block;
-        height: 0.5rem;
-        width: 4rem;
-        background-color: silver;
-        margin: 1rem auto 0 auto;
-    }
+  &:after {
+    content: '';
+    display: block;
+    height: 0.5rem;
+    width: 4rem;
+    background-color: silver;
+    margin: 1rem auto 0 auto;
+  }
 }
 
 .herobox__logo {
-    display: flex;
-    margin-bottom: 0.2rem;
+  display: flex;
+  margin-bottom: 0.2rem;
 
-    span {
-        background: url(../img/hero_placholder.png) no-repeat;
-        display: block;
-        width: 4.5rem;
-        height: 5rem;
-        background-size: cover;
-        @include respond-to($phone) {
-            width: 2.5rem;
-            height: 3.5rem;
-        }
+  span {
+    background: url(../img/hero_placholder.png) no-repeat;
+    display: block;
+    width: 4.5rem;
+    height: 5rem;
+    background-size: cover;
+    @include respond-to($phone) {
+      width: 2.5rem;
+      height: 3.5rem;
     }
-    &:before,
-    &:after{
-        content: "<";
-        display: block;
-        font-size: 5rem;
-        @include respond-to($phone) {
-            font-size: 3.5rem;
-        }
+  }
+  &:before,
+  &:after {
+    content: '<';
+    display: block;
+    font-size: 5rem;
+    @include respond-to($phone) {
+      font-size: 3.5rem;
     }
-    &:after{
-        content: ">";
-    }
+  }
+  &:after {
+    content: '>';
+  }
 }
 
-.herobox__subtitle{
-    margin: 0;
-    width: 100%;
-    color: silver;
+.herobox__subtitle {
+  margin: 0;
+  width: 100%;
+  color: silver;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  @include respond-to($laptop) {
     font-size: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden;
-    @include respond-to($laptop) {
-        font-size: 1.5rem;
-    }
-    @include respond-to($phone) {
-        font-size: 1rem;
-    }
+  }
+  @include respond-to($phone) {
+    font-size: 1rem;
+  }
 }
 
 /* Styling of Subtitle and  swap animation  on landing page */
 
-.herobox__subtitle__left{
-    width: 45%;
-    text-align:right;
-    transform-origin: center right;
-    animation: swap_left 9s ease-in-out infinite alternate;
+.herobox__subtitle__left {
+  width: 45%;
+  text-align: right;
+  transform-origin: center right;
+  animation: swap_left 9s ease-in-out infinite alternate;
 }
 
-.herobox__subtitle__right{
-    width: 45%;
-    transform-origin: center left;
-    animation: swap_right 9s ease-in-out infinite alternate;
+.herobox__subtitle__right {
+  width: 45%;
+  transform-origin: center left;
+  animation: swap_right 9s ease-in-out infinite alternate;
 }
 
 .herobox__subtitle__middle {
-    text-align: center;
+  text-align: center;
 }
 
 /* ###########################################################
@@ -253,87 +254,90 @@ body{
 ########################################################### */
 
 #navbox__burgercontainer {
-    margin-right: 3%;
+  margin-right: 3%;
 }
 
-.navbox__burgeritem{
-    cursor: pointer;
-    z-index: 2;
-    pointer-events: all;
+.navbox__burgeritem {
+  cursor: pointer;
+  z-index: 2;
+  pointer-events: all;
 
-    span {
-        display: block;
-        width: 40px;
-        height: 5px;
-        margin: 0px 0px 5px 0;
-        background-color: silver;
-        top: 0;
-        position: relative;
-        transition: all ease-in-out 0.4s;
-    }
+  span {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin: 0px 0px 5px 0;
+    background-color: silver;
+    top: 0;
+    position: relative;
+    transition: all ease-in-out 0.4s;
+  }
 }
 
 #navbox__burgercontainer.open span:nth-child(2),
-#navbox__burgercontainer.open span:nth-child(3){
-    width: 0;
-    opacity: 0;
-    visibility: hidden;
+#navbox__burgercontainer.open span:nth-child(3) {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
 }
 
-#navbox__burgercontainer.open span:nth-child(4){
-    transform: rotate(45deg);
-   transform-origin: right center
+#navbox__burgercontainer.open span:nth-child(4) {
+  transform: rotate(45deg);
+  transform-origin: right center;
 }
 
-#navbox__burgercontainer.open span:nth-child(1){
-    transform: rotate(-45deg);
-    transform-origin: right center
+#navbox__burgercontainer.open span:nth-child(1) {
+  transform: rotate(-45deg);
+  transform-origin: right center;
 }
-
 
 /* #######################################
 ###### Styling of Nav-Anchors ##
 ##########################################*/
 
 .sitelink {
-    padding: 1.2rem;
-    margin-right: 2rem;
-    color: silver;
-    text-decoration: none;
-    font-size: 1.2rem;
-    position: relative;
+  padding: 1.2rem;
+  margin-right: 2rem;
+  color: silver;
+  text-decoration: none;
+  font-size: 1.2rem;
+  position: relative;
 
-    &:before,
-    &:after {
-        content: "";
-        width: 2px;
-        height: 2rem;
-        background-color: goldenrod;
-        opacity: 0.4;
-        position: absolute;
-        transition: all 0.4s;
-        top: 25%
-    }
+  &:before,
+  &:after {
+    content: '';
+    width: 2px;
+    height: 2rem;
+    background-color: goldenrod;
+    opacity: 0.4;
+    position: absolute;
+    transition: all 0.4s;
+    top: 25%;
+  }
 
-    &:before{left: 0;}
-    &:after {right: 0;}
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
+  }
 
-    &:hover:before{
-        left: calc(50% - 1px);
-        top: -25%;
-        transform: rotate(90deg);
-        opacity: 1;
-        height: 99%;
-    }
+  &:hover:before {
+    left: calc(50% - 1px);
+    top: -25%;
+    transform: rotate(90deg);
+    opacity: 1;
+    height: 99%;
+  }
 
-    &:hover:after{
-        right: calc(50% - 1px);
-        bottom: 0;
-        top: 25%;
-        transform: rotate(90deg);
-        opacity: 1;
-        height: 99%
-    }
+  &:hover:after {
+    right: calc(50% - 1px);
+    bottom: 0;
+    top: 25%;
+    transform: rotate(90deg);
+    opacity: 1;
+    height: 99%;
+  }
 }
 
 /* #######################################
@@ -341,167 +345,177 @@ body{
 ########################################## */
 
 .projects {
-    padding-bottom: 5em;
-    background-color: rgba(100,100,100,0.1);
-    @include respond-to($phone) {
-        height: 30em;
-    }
-     @include respond-to($big-landscape) {
-         height: 30em;
-     }
+  padding-bottom: 5em;
+  background-color: rgba(100, 100, 100, 0.1);
+  @include respond-to($phone) {
+    height: 30em;
+  }
+  @include respond-to($big-landscape) {
+    height: 30em;
+  }
 }
 
 .section-title {
-    text-align: center;
-    font-size: 4rem;
-    margin: 0;
-    letter-spacing: 0.2rem;
-    @include respond-to($laptop) {
-        font-size: 3rem;
-    }
+  text-align: center;
+  font-size: 4rem;
+  margin: 0;
+  letter-spacing: 0.2rem;
+  @include respond-to($laptop) {
+    font-size: 3rem;
+  }
+  @include respond-to($big-landscape) {
+    font-size: 2.5rem;
+  }
+  @include respond-to($phone) {
+    font-size: 2.5rem;
+  }
+  @include respond-to($small-phone) {
+    font-size: 2rem;
+  }
+
+  span {
+    display: block;
+    text-align: left;
     @include respond-to($big-landscape) {
-        font-size: 2.5rem;
+      display: inline-block;
     }
-    @include respond-to($phone) {
-        font-size: 2.5rem;
-    }
-    @include respond-to($small-phone) {
-        font-size: 2rem;
-    }
-
-
-    span {
-        display: block;
-        text-align: left;
-        @include respond-to($big-landscape) {
-            display: inline-block;}
-    }
+  }
 }
 
 .slider {
-    margin-top: 7em;
-    @include respond-to($laptop) {
-        margin-top: 3em;}
-    @include respond-to($phone) {
-        margin-top: 6em;}
+  margin-top: 7em;
+  @include respond-to($laptop) {
+    margin-top: 3em;
+  }
+  @include respond-to($phone) {
+    margin-top: 6em;
+  }
 }
 
 .flickity-page-dots {
-@include respond-to($phone) {
-    display: none;}
+  @include respond-to($phone) {
+    display: none;
+  }
 }
 
 .slidecard {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    background-color: silver;
-    height: 550px;
-    width: 830px;
-    margin: 0 15rem 0 5rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  background-color: silver;
+  height: 550px;
+  width: 830px;
+  margin: 0 15rem 0 5rem;
+  position: relative;
+  @include respond-to($laptop) {
+    height: 400px;
+    width: 700px;
+  }
+  @include respond-to($tablet-portrait) {
+    width: 600px;
+  }
+  @include respond-to($big-landscape) {
+    height: 60vh;
+    width: 500px;
+  }
+  @include respond-to($phone) {
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 300px;
+    height: 150px;
+  }
+
+  span {
+    display: block;
     position: relative;
-    @include respond-to($laptop) {
-        height: 400px;
-        width: 700px;
-    }
+    left: -3.5rem;
     @include respond-to($tablet-portrait) {
-        width: 600px;
-    }
-    @include respond-to($big-landscape) {
-        height: 60vh;
-        width: 500px;
+      left: -2.5rem;
     }
     @include respond-to($phone) {
-        flex-direction: column;
-        justify-content: flex-end;
-        width: 300px;
-        height: 150px;
+      left: unset;
+      text-align: center;
     }
+  }
 
-    span {
-        display: block;
-        position: relative;
-        left: -3.5rem;
-        @include respond-to($tablet-portrait) {
-            left: -2.5rem;}
-        @include respond-to($phone) {
-            left: unset;
-            text-align: center;}
+  h3 {
+    color: rgba(23, 23, 23, 1);
+    font-size: 4rem;
+    letter-spacing: 0.2rem;
+    transition: all 0.3s;
+    @include respond-to($laptop) {
+      font-size: 4rem;
     }
+    @include respond-to($tablet-portrait) {
+      font-size: 3.5rem;
+    }
+    @include respond-to($phone) {
+      font-size: 2rem;
+      position: relative;
+      order: 2;
+      top: 2em;
+    }
+    @include respond-to($big-landscape) {
+      font-size: 2.5rem;
+    }
+  }
 
-    h3 {
-        color: rgba(23,23,23, 1);
-        font-size: 4rem;
-        letter-spacing: 0.2rem;
-        transition: all 0.3s;
-        @include respond-to($laptop) {
-            font-size: 4rem;
-        }
-        @include respond-to($tablet-portrait) {
-            font-size: 3.5rem;
-        }
-        @include respond-to($phone) {
-            font-size: 2rem;
-            position: relative;
-            order: 2;
-            top: 2em;
-        }
-        @include respond-to($big-landscape) {
-            font-size: 2.5rem;}
+  h3:after {
+    content: '';
+    display: block;
+    height: 0.5rem;
+    width: 3rem;
+    background-color: goldenrod;
+    position: absolute;
+    left: -3.5rem;
+    @include respond-to($tablet-portrait) {
+      left: -1.5rem;
     }
+    @include respond-to($big-landscape) {
+      left: -2.5rem;
+    }
+    @include respond-to($phone) {
+      left: calc(50% - 1.5rem);
+      height: 0.3rem;
+    }
+  }
 
-    h3:after {
-        content: "";
-        display: block;
-        height: 0.5rem;
-        width: 3rem;
-        background-color: goldenrod;
-        position: absolute;
-        left: -3.5rem;
-        @include respond-to($tablet-portrait) {
-            left: -1.5rem;
-        }
-        @include respond-to($big-landscape) {
-            left: -2.5rem;}
-        @include respond-to($phone) {
-            left: calc(50% - 1.5rem);
-            height: 0.3rem;
-        }
-    }
-
-    h3:hover {
-        transform: translatey(-40px);
-    }
+  h3:hover {
+    transform: translatey(-40px);
+  }
 }
 
 .slideimg {
-    height: auto;
-    max-width: 45em;
-    transition: all 0.3s;
-    @include respond-to($laptop) {
-        max-width: 40em;}
-    @include respond-to($tablet-portrait) {
-        max-width: 30em;}
-    @include respond-to($phone) {
-        width: 275px;
-        position: relative;
-        top: 6em}
+  height: auto;
+  max-width: 45em;
+  transition: all 0.3s;
+  @include respond-to($laptop) {
+    max-width: 40em;
+  }
+  @include respond-to($tablet-portrait) {
+    max-width: 30em;
+  }
+  @include respond-to($phone) {
+    width: 275px;
+    position: relative;
+    top: 6em;
+  }
 
-    &:hover{
-        transform: translatex(40px);
-    }
+  &:hover {
+    transform: translatex(40px);
+  }
 }
 
 .slidecard--second {
-    background-color: mistyrose;
+  background-color: mistyrose;
 }
 
 .slidecard--third {
-    background-color: aquamarine;
+  background-color: aquamarine;
 }
 
 .slidecard--fourth {
-    background-color: lightsalmon;
+  background-color: lightsalmon;
 }
 
 /* #########################################
@@ -509,145 +523,150 @@ body{
 ########################################## */
 .aboutme,
 .experience {
-    height: 90vh;
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 2rem;
-    position: relative;
+  height: 90vh;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+  position: relative;
+  @include respond-to($tablet-portrait) {
+    width: 100%;
+    height: 80vh;
+  }
+  @include respond-to($big-landscape) {
+    height: 100vh;
+  }
+  @include respond-to($phone) {
+    height: 30em;
+  }
+
+  &:before {
+    content: '';
+    background-color: rgba(100, 100, 100, 0.1);
+    position: absolute;
+    width: 75%;
+    height: 90%;
+    left: 2%;
+    z-index: -1;
+    @include respond-to($laptop) {
+      width: 80%;
+      height: 90%;
+    }
     @include respond-to($tablet-portrait) {
-        width: 100%;
-        height: 80vh;
+      max-height: 85%;
+      width: 70%;
     }
     @include respond-to($big-landscape) {
-        height: 100vh;
+      max-height: 85%;
+      width: 80%;
+    }
+    @include respond-to($small-landscape) {
+      max-height: 95%;
     }
     @include respond-to($phone) {
-        height: 30em;
+      width: 100%;
+      left: unset;
+      max-height: 90%;
     }
-
-    &:before {
-        content: "";
-        background-color: rgba(100,100,100,0.1);
-        position: absolute;
-        width: 75%;
-        height: 90%;
-        left: 2%;
-        z-index: -1;
-        @include respond-to($laptop) {
-            width: 80%;
-            height: 90%;
-        }
-        @include respond-to($tablet-portrait) {
-            max-height: 85%;
-            width: 70%;
-        }
-        @include respond-to($big-landscape) {
-            max-height: 85%;
-            width: 80%;}
-        @include respond-to($small-landscape) {
-            max-height: 95%;}
-        @include respond-to($phone) {
-            width: 100%;
-            left: unset;
-            max-height: 90%}
-    }
+  }
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-basis: 35%;
-    max-height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-basis: 35%;
+  max-height: 70%;
+  @include respond-to($tablet-portrait) {
+    flex-basis: 40%;
+  }
+  @include respond-to($big-landscape) {
+    max-height: 90%;
+    flex-basis: 50%;
+  }
+
+  @include respond-to($phone) {
+    flex-basis: 90%;
+    max-height: 90%;
+  }
+  /* animation: fadeInUp 0.8s forwards; */
+  p {
+    line-height: 1.75;
+    width: 100%;
+    @include respond-to($laptop) {
+      line-height: 1.5;
+    }
     @include respond-to($tablet-portrait) {
-        flex-basis: 40%;
+      line-height: 1.5;
     }
     @include respond-to($big-landscape) {
-        max-height: 90%;
-        flex-basis: 50%;
+      line-height: 1.3;
+      font-size: 1rem;
     }
-
     @include respond-to($phone) {
-        flex-basis: 90%;
-        max-height: 90%}
-    /* animation: fadeInUp 0.8s forwards; */
-    p {
-        line-height: 1.75;
-        width: 100%;
-        @include respond-to($laptop) {
-            line-height: 1.5;
-        }
-        @include respond-to($tablet-portrait) {
-            line-height: 1.5;
-        }
-        @include respond-to($big-landscape) {
-            line-height: 1.3;
-            font-size: 1rem
-        }
-        @include respond-to($phone) {
-            line-height: 1.75;}
-        @include respond-to($small-phone) {
-            line-height: 1.2;
-            font-size: 0.9rem;
-        }
-
+      line-height: 1.75;
     }
-
-    a {
-        color: rgba(23,23,23, 1);
-        @include respond-to($phone) {
-            margin-top: 2rem;}
-        @include respond-to($small-phone) {
-            margin-top: 0.5rem;
-        }
-
+    @include respond-to($small-phone) {
+      line-height: 1.2;
+      font-size: 0.9rem;
     }
+  }
 
-
-    h2:after {
-        content: "";
-        display: block;
-        height: 0.5rem;
-        width: 3rem;
-        background-color: goldenrod;
-        margin-top: 1rem;
-        @include respond-to($phone) {
-            margin-bottom: 1rem;}
+  a {
+    color: rgba(23, 23, 23, 1);
+    @include respond-to($phone) {
+      margin-top: 2rem;
     }
+    @include respond-to($small-phone) {
+      margin-top: 0.5rem;
+    }
+  }
 
+  h2:after {
+    content: '';
+    display: block;
+    height: 0.5rem;
+    width: 3rem;
+    background-color: goldenrod;
+    margin-top: 1rem;
+    @include respond-to($phone) {
+      margin-bottom: 1rem;
+    }
+  }
 }
-
 
 .aboutme img,
 .experience img {
-    flex-basis: 30%;
-    height: auto;
-    @include respond-to($laptop) {
-        // min-width: 300px;
-        width: auto;
-        max-height: 400px;
-        flex-basis: 40%;
-    }
-    @include respond-to($tablet-portrait) {
-        // min-width: 220px;
-        max-height: 400px;
-    }
-    @include respond-to($big-landscape) {
-        max-height: 300px;}
+  flex-basis: 30%;
+  height: auto;
+  @include respond-to($laptop) {
+    // min-width: 300px;
+    width: auto;
+    max-height: 400px;
+    flex-basis: 40%;
+  }
+  @include respond-to($tablet-portrait) {
+    // min-width: 220px;
+    max-height: 400px;
+  }
+  @include respond-to($big-landscape) {
+    max-height: 300px;
+  }
 
-    @include respond-to($phone) {
-        display:none;}
+  @include respond-to($phone) {
+    display: none;
+  }
 }
 
 /* ##### Experience section differences #### */
 
 .experience:before {
-    left: 28%;
-    @include respond-to($phone) {
-        left: unset;}
+  left: 28%;
+  @include respond-to($phone) {
+    left: unset;
+  }
 }
 
 /* ##################################
@@ -665,163 +684,167 @@ body{
 // }
 
 .tools__overview {
-    display: grid;
-    width: 70%;
-    margin: 2em auto 2em auto;
-    grid-template-columns: 1fr 1fr 1fr;
-    // grid-auto-rows: 20vh;
-    justify-items: center;
-    align-items: center;
+  display: grid;
+  width: 70%;
+  margin: 2em auto 2em auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  // grid-auto-rows: 20vh;
+  justify-items: center;
+  align-items: center;
+  @include respond-to($big-landscape) {
+    width: 90%;
+  }
+  @include respond-to($phone) {
+    width: 90%;
+  }
+
+  & > i {
+    font-size: 6rem;
+    padding: 1rem 0;
+    color: goldenrod;
     @include respond-to($big-landscape) {
-        width: 90%;
+      font-size: 5rem;
+    }
+    @include respond-to($small-landscape) {
+      font-size: 4rem;
     }
     @include respond-to($phone) {
-        width: 90%;}
-
-    & > i {
-        font-size: 6rem;
-        padding: 1rem 0;
-        color: goldenrod;
-        @include respond-to($big-landscape) {
-            font-size: 5rem;}
-        @include respond-to($small-landscape) {
-            font-size: 4rem;}
-        @include respond-to($phone) {
-            font-size: 5rem;}
+      font-size: 5rem;
     }
-
+  }
 }
 
 .fadeInUp {
-    // transform: translateY(4rem);
-    opacity: 0;
+  // transform: translateY(4rem);
+  opacity: 0;
 }
 
 .fadeInUpTriggered {
-    animation: fadeInUp 0.5s forwards;
+  animation: fadeInUp 0.5s forwards;
 }
-
 
 /* ##################################
 ####### Contact section ###########
 ################################## */
 
 .contact {
-    height: 40vh;
-    margin: 0 2%;
-    position: relative;
-    @include respond-to($phone) {
-        height: 50vh;}
-    @include respond-to($big-landscape) {
-        height: 80vh;
-    }
+  height: 40vh;
+  margin: 0 2%;
+  position: relative;
+  @include respond-to($phone) {
+    height: 50vh;
+  }
+  @include respond-to($big-landscape) {
+    height: 80vh;
+  }
 }
 
 .contact__content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 
-    & > a {
-        text-decoration: none;
-        color: silver;
-        font-size: 2.5rem;
-        @include respond-to($phone) {
-            font-size: 1.5rem;}
-        @include respond-to($small-phone) {
-            font-size: 1.2rem;
-        }
+  & > a {
+    text-decoration: none;
+    color: silver;
+    font-size: 2.5rem;
+    @include respond-to($phone) {
+      font-size: 1.5rem;
     }
+    @include respond-to($small-phone) {
+      font-size: 1.2rem;
+    }
+  }
 }
 
 .slideIn {
-    opacity: 0
+  opacity: 0;
 }
 
 .slideInTriggered {
-    animation: slideInLeft 0.5s forwards;
+  animation: slideInLeft 0.5s forwards;
 
-    &:after {
-        content: "";
-        background-color: lighten(#1e2b31, 25);
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        animation: slideInRight 1.5s forwards 0.5s;
-        opacity: 0;
-    }
+  &:after {
+    content: '';
+    background-color: lighten(#1e2b31, 25);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: slideInRight 1.5s forwards 0.5s;
+    opacity: 0;
+  }
 }
 
 .social {
-    width: 20%;
-    display: flex;
-    justify-content: space-around;
-    @include respond-to($tablet-portrait) {
-        width: 50%;
-    }
-    @include respond-to($phone) {
-        width: 80%;}
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  @include respond-to($tablet-portrait) {
+    width: 50%;
+  }
+  @include respond-to($phone) {
+    width: 80%;
+  }
 
-    a {
-        text-decoration: none;
-        color: black;
-    }
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 .contact-title {
-    padding: 0;
+  padding: 0;
 }
 
 .section-title--underscore {
-    padding-top: 1em;
+  padding-top: 1em;
 
-    &:after{
-        content: "";
-        display: block;
-        height: 0.5rem;
-        width: 4rem;
-        background-color: silver;
-        margin: 1rem auto 0 auto;
-    }
+  &:after {
+    content: '';
+    display: block;
+    height: 0.5rem;
+    width: 4rem;
+    background-color: silver;
+    margin: 1rem auto 0 auto;
+  }
 }
 /* ##################################
 ####### Footer Styling ###########
 ################################## */
 
 footer {
-    height: 5em;
-    margin: 0 2%;
-    background-color: rgba(100,100,100,0.1);
-    display: flex;
-    align-items: center;
-    @include respond-to($phone) {
-        height: 10em;}
-
+  height: 5em;
+  margin: 0 2%;
+  background-color: rgba(100, 100, 100, 0.1);
+  display: flex;
+  align-items: center;
+  @include respond-to($phone) {
+    height: 10em;
+  }
 }
 
 .footercontent {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto;
-    @include respond-to($phone) {
-        height: 80%;
-        flex-direction: column;
-        }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  @include respond-to($phone) {
+    height: 80%;
+    flex-direction: column;
+  }
 
-    a {
-        text-decoration: none;
-        color: black;
-    }
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 /* #################################
 ###########    Media Querys   ######
 ####################################*/
-
