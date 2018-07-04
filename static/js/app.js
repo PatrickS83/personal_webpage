@@ -20,7 +20,11 @@ class Controller {
 
   // fix 100vh problems in mobile browsers
   setHeroHeight() {
-    this.elements.herosite.style.height = window.innerHeight + 'px';
+    const { herosite } = this.elements;
+    herosite.style.height = window.innerHeight + 'px';
+    window.addEventListener('resize', () => {
+      herosite.style.height = window.innerHeight + 'px';
+    });
   }
 
   // listens to clicks on the navbar burger icon
