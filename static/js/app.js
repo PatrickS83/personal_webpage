@@ -1,10 +1,10 @@
-
 class Controller {
   constructor() {
     this.elements = {
       navBurger: document.getElementById('navbox__burgercontainer'),
       navBar: document.querySelector('.navbox__navbar'),
       navBox: document.querySelector('.navbox'),
+      herosite: document.querySelector('.herosite'),
       toolsIcons: document.querySelectorAll('.fadeInUp'),
       contactSection: document.querySelector('.contact__content')
     };
@@ -15,6 +15,12 @@ class Controller {
     this.navBarClickListener();
     this.navBarScrollListener();
     this.iconScrollListener();
+    this.setHeroHeight();
+  }
+
+  // fix 100vh problems in mobile browsers
+  setHeroHeight() {
+    this.elements.herosite.style.height = window.innerHeight + 'px';
   }
 
   // listens to clicks on the navbar burger icon
@@ -59,16 +65,16 @@ class Controller {
     function isInViewport(element) {
       const bounding = element.getBoundingClientRect();
       return (
-        bounding.top >= 0
-    && bounding.left >= 0
-    && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-    && bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
       );
     }
 
     // triggers animation for elements that entered the viewport
     setInterval(() => {
-      this.elements.toolsIcons.forEach((icon) => {
+      this.elements.toolsIcons.forEach(icon => {
         if (isInViewport(icon)) icon.classList.add('fadeInUpTriggered');
       });
       if (isInViewport(this.elements.contactSection)) {
@@ -77,6 +83,5 @@ class Controller {
     }, 150);
   }
 }
-
 
 const control = new Controller();
