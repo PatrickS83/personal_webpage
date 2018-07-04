@@ -784,6 +784,11 @@ body {
   animation: fadeInUp 1s forwards 1.5s, bounce 1.5s infinite 1.5s;
   transform-origin: center bottom;
 }
+@media only screen and (max-width: 600px) {
+  .downarrow {
+    bottom: calc(3% + 50px);
+  }
+}
 
 /* ##########################################
 #############Styling of Navbar ##############
