@@ -1,14 +1,14 @@
-$small-phone : '(max-width: 450px)';
-$phone : '(max-width: 600px)';
+$small-phone: '(max-width: 450px)';
+$phone: '(max-width: 600px)';
 $tablet-portrait: '(max-width: 830px)';
-$big-landscape: '(max-height: 600px)';
+$big-landscape: '(max-height: 550px)';
 $small-landscape: '(max-height: 450px)';
 $laptop: '(max-width: 1400px)';
 $large-desktop: '(min-width: 1200px)';
 $non-retina: 'screen and (-webkit-max-device-pixel-ratio: 1)';
 
 @mixin respond-to($media) {
-    @media only screen and #{$media} {
-        @content;
-    }
-};
+  @media only screen and #{$media} {
+    @content;
+  }
+}

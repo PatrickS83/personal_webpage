@@ -7,7 +7,8 @@ class Controller {
       herosite: document.querySelector('.herosite'),
       herobox: document.querySelector('.herobox'),
       toolsIcons: document.querySelectorAll('.fadeInUp'),
-      contactSection: document.querySelector('.contact__content')
+      contactSection: document.querySelector('.contact__content'),
+      contactTrigger: document.querySelector('#contactAnimTrigger')
     };
     this.init();
   }
@@ -93,7 +94,7 @@ class Controller {
       this.elements.toolsIcons.forEach(icon => {
         if (isInViewport(icon)) icon.classList.add('fadeInUpTriggered');
       });
-      if (isInViewport(this.elements.contactSection)) {
+      if (isInViewport(this.elements.contactTrigger)) {
         this.elements.contactSection.classList.add('slideInTriggered');
       }
     }, 150);
