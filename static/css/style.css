@@ -1277,7 +1277,7 @@ body {
 }
 
 /* #########################################
-#######     Contentent Sections ##############
+#######     Content Sections ##############
 ########################################## */
 .aboutme,
 .experience {
@@ -1441,14 +1441,13 @@ body {
 .aboutme img,
 .experience img {
   flex-basis: 30%;
-  height: auto;
+  height: 550px;
 }
 @media only screen and (max-width: 1400px) {
   .aboutme img,
 .experience img {
     width: auto;
-    max-height: 400px;
-    flex-basis: 40%;
+    max-height: 450px;
   }
 }
 @media only screen and (max-width: 830px) {
