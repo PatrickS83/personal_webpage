@@ -1584,7 +1584,7 @@ body {
 }
 .slideInTriggered:after {
   content: "";
-  background-color: #4e7080;
+  background: linear-gradient(90deg, #223138 0%, #86a6b4 100%);
   width: 100%;
   height: 100%;
   position: absolute;

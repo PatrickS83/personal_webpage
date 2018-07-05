@@ -771,7 +771,7 @@ body {
 
   &:after {
     content: '';
-    background-color: lighten(#1e2b31, 25);
+    background: linear-gradient(90deg, lighten(#223138, 0) 0%, lighten(#769aaa, 5) 100%);
     width: 100%;
     height: 100%;
     position: absolute;
